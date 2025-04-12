@@ -1,345 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MadWords:  An Advertisement for Toothpaste</title>
-<style>
-/* General Styles */
-body {
-font-family: 'Comic Sans MS', cursive, sans-serif;
-background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
-color: #2e7d32; /* Dark green text */
-text-align: center;
-padding: 20px;
-margin: 0;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8NPQCRL1FW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadWords: An Advertisement for Toothpaste</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
+            color: #2e7d32; /* Dark green text */
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.squarespace-wrapper {
-max-width: 800px; /* Adjust as needed */
-width: 100%;
-margin: 0 auto;
-padding: 20px;
-position: relative;
-}
+        .squarespace-wrapper {
+            max-width: 800px; /* Adjust as needed */
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
 
-h1 {
-font-size: 3rem;
-color: #388e3c; /* Medium green */
-text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
-margin-bottom: 20px;
-}
+        h1 {
+            font-size: 3rem;
+            color: #388e3c; /* Medium green */
+            text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
+            margin-bottom: 20px;
+        }
 
-.container {
-background-color: rgba(255, 255, 255, 0.9);
-border: 2px solid #81c784; /* Single light green border */
-border-radius: 20px; /* Slightly rounded corners */
-padding: 30px; /* Consistent padding */
-width: 100%;
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-backdrop-filter: blur(10px);
-}
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #81c784; /* Single light green border */
+            border-radius: 20px; /* Slightly rounded corners */
+            padding: 30px; /* Consistent padding */
+            width: 100%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
 
-p {
-font-size: 1.2rem;
-margin-bottom: 20px;
-color: #2e7d32; /* Dark green text */
-}
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #2e7d32; /* Dark green text */
+        }
 
-/* Form Styles */
-form {
-display: flex;
-flex-wrap: wrap; /* Allow wrapping of form elements */
-gap: 15px; /* Space between form elements */
-}
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping of form elements */
+            gap: 15px; /* Space between form elements */
+        }
 
-.form-group {
-flex: 1 1 calc(50% - 15px); /* Always two inputs per line */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-}
+        .form-group {
+            flex: 1 1 calc(50% - 15px); /* Always two inputs per line */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-.form-group.half-width {
-flex: 1 1 calc(25% - 15px); /* Half width for the last input */
-}
+        .form-group.half-width {
+            flex: 1 1 calc(25% - 15px); /* Half width for the last input */
+        }
 
-label {
-font-size: 1.1rem;
-color: #388e3c; /* Medium green */
-font-weight: bold;
-margin-bottom: 5px;
-cursor: pointer; /* Indicate that the label is interactive */
-}
+        label {
+            font-size: 1.1rem;
+            color: #388e3c; /* Medium green */
+            font-weight: bold;
+            margin-bottom: 5px;
+            cursor: pointer; /* Indicate that the label is interactive */
+        }
 
-input {
-padding: 12px;
-border: 2px solid #81c784; /* Light green border */
-border-radius: 10px;
-font-size: 1rem;
-width: 100%;
-box-sizing: border-box;
-transition: border-color 0.3s ease;
-}
+        input {
+            padding: 12px;
+            border: 2px solid #81c784; /* Light green border */
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
 
-/* Hide placeholder by default */
-input::placeholder {
-opacity: 0; /* Hide placeholder by default */
-transition: opacity 0.3s ease;
-}
+        /* Hide placeholder by default */
+        input::placeholder {
+            opacity: 0; /* Hide placeholder by default */
+            transition: opacity 0.3s ease;
+        }
 
-/* Show placeholder when hovering over the label */
-label:hover + input::placeholder {
-opacity: 1; /* Show placeholder on hover */
-}
+        /* Show placeholder when hovering over the label */
+        label:hover + input::placeholder {
+            opacity: 1; /* Show placeholder on hover */
+        }
 
-input:focus {
-border-color: #4caf50; /* Darker green on focus */
-outline: none;
-}
+        input:focus {
+            border-color: #4caf50; /* Darker green on focus */
+            outline: none;
+        }
 
-button {
-background-color: #388e3c; /* Medium green */
-color: white;
-padding: 12px 24px;
-border: none;
-border-radius: 10px;
-font-size: 1.2rem;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-margin-top: 20px;
-width: 100%; /* Full-width button */
-}
+        button {
+            background-color: #388e3c; /* Medium green */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+            width: 100%; /* Full-width button */
+        }
 
-button:hover {
-background-color: #4caf50; /* Darker green on hover */
-transform: scale(1.05);
-}
+        button:hover {
+            background-color: #4caf50; /* Darker green on hover */
+            transform: scale(1.05);
+        }
 
-/* Story Styles */
-.story {
-font-size: 1.2rem;
-line-height: 1.6;
-margin-top: 20px;
-padding: 20px;
-background-color: #f1f8e9; /* Very light green background */
-border: 2px solid #a5d6a7; /* Light green border */
-border-radius: 10px;
-display: none;
-animation: fadeIn 1s ease;
-text-align: left; /* Left-justify the story text */
-}
+        /* Story Styles */
+        .story {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f1f8e9; /* Very light green background */
+            border: 2px solid #a5d6a7; /* Light green border */
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 1s ease;
+            text-align: left; /* Left-justify the story text */
+        }
 
-.story.show {
-display: block;
-}
+        .story.show {
+            display: block;
+        }
 
-.story-title {
-font-size: 1.5rem;
-color: #388e3c; /* Medium green */
-font-weight: bold;
-margin-bottom: 10px;
-text-align: center; /* Center the title */
-display: none; /* Hidden by default */
-}
+        .story-title {
+            font-size: 1.5rem;
+            color: #388e3c; /* Medium green */
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center; /* Center the title */
+            display: none; /* Hidden by default */
+        }
 
-.story-title.show {
-display: block; /* Show when story is generated */
-}
+        .story-title.show {
+            display: block; /* Show when story is generated */
+        }
 
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-.story strong {
-color: #388e3c; /* Medium green */
-}
+        .story strong {
+            color: #388e3c; /* Medium green */
+        }
 
-/* Underline typed-in words */
-.story span {
-text-decoration: underline;
-text-decoration-skip-ink: none; /* Ensure underline appears below descenders */
-font-weight: bold;
-}
+        /* Underline typed-in words */
+        .story span {
+            text-decoration: underline;
+            text-decoration-skip-ink: none; /* Ensure underline appears below descenders */
+            font-weight: bold;
+        }
 
-/* Navigation Buttons */
-.navigation-buttons {
-display: flex;
-justify-content: space-between;
-margin-top: 20px;
-}
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
 
-.navigation-buttons.initial-position {
-order: 1; /* Appears after form by default */
-}
+        .navigation-buttons.initial-position {
+            order: 1; /* Appears after form by default */
+        }
 
-.navigation-buttons.story-position {
-order: 2; /* Moves after story when shown */
-margin-top: 20px;
-}
+        .navigation-buttons.story-position {
+            order: 2; /* Moves after story when shown */
+            margin-top: 20px;
+        }
 
-.navigation-buttons button {
-width: 48%; /* Slightly less than half to account for gap */
-margin: 0;
-background-color: #4caf50; /* Green color for both buttons */
-color: white;
-padding: 12px 24px;
-border: none;
-border-radius: 10px;
-font-size: 1.2rem;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
+        .navigation-buttons button {
+            width: 48%; /* Slightly less than half to account for gap */
+            margin: 0;
+            background-color: #4caf50; /* Green color for both buttons */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.navigation-buttons button:hover {
-background-color: #388e3c; /* Darker green on hover */
-transform: scale(1.05);
-}
+        .navigation-buttons button:hover {
+            background-color: #388e3c; /* Darker green on hover */
+            transform: scale(1.05);
+        }
 
-/* Container flex layout */
-.container {
-display: flex;
-flex-direction: column;
-}
+        /* Container flex layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
 
-#madlibs-form {
-order: 0;
-}
+        #madlibs-form {
+            order: 0;
+        }
 
-.story-title {
-order: 1;
-}
+        .story-title {
+            order: 1;
+        }
 
-.story {
-order: 2;
-}
+        .story {
+            order: 2;
+        }
 
-.navigation-buttons {
-order: 3;
-}
-</style>
+        .navigation-buttons {
+            order: 3;
+        }
+    </style>
 </head>
 <body>
-<div class="squarespace-wrapper">
-<div class="container">
-<h1>MadWords:  An Advertisement for Toothpaste</h1>
-<p>Fill in the blanks below, then read your hilarious story!</p>
-<form id="madlibs-form">
-<div class="form-group">
-<label for="noun">Noun:</label>
-<input type="text" id="noun" placeholder="e.g., dragon" required>
-</div>
-<div class="form-group">
-<label for="number1">Number:</label>
-<input type="text" id="number1" placeholder="e.g., 7" required>
-</div>
-<div class="form-group">
-<label for="adjective1">Adjective:</label>
-<input type="text" id="adjective1" placeholder="e.g., fluffy" required>
-</div>
-<div class="form-group">
-<label for="time">Unit of Time:</label>
-<input type="text" id="time" placeholder="e.g., century" required>
-</div>
-<div class="form-group">
-<label for="adjective2">Adjective:</label>
-<input type="text" id="adjective2" placeholder="e.g., shiny" required>
-</div>
-<div class="form-group">
-<label for="website">Website Name:</label>
-<input type="text" id="website" placeholder="e.g., dragonsrule.com" required>
-</div>
-<div class="form-group half-width">
-<label for="number2">Number:</label>
-<input type="text" id="number2" placeholder="e.g., 99" required>
-</div>
-<button type="submit">Generate MadWords</button>
-</form>
-<!-- Story Title -->
-<h2 id="story-title" class="story-title">Tom's Toothpaste Ad</h2>
-<!-- Story -->
-<div id="story" class="story">
-<p>Do you have really bad morning <span id="noun-result"></span>? Do your teeth have cavities even though you brush them <span id="number1-result"></span> times a day? Well, I've got something for you. Tom's Toothpaste is <span id="adjective1-result"></span> for cleaning teeth and cavities. In less than a <span id="time-result"></span>, your teeth will be <span id="adjective2-result"></span> and clean. Purchase Tom's Toothpaste now at <span id="website-result"></span> and get <span id="number2-result"></span> percent off!</p>
-</div>
-<!-- Navigation Buttons -->
-<div class="navigation-buttons initial-position">
-<button class="home">Home</button>
-<button class="next">Next</button>
-</div>
-</div>
-</div>
+    <div class="squarespace-wrapper">
+        <div class="container">
+            <h1>MadWords: An Advertisement for Toothpaste</h1>
+            <p>Fill in the blanks below, then read your hilarious story!</p>
+            
+            <form id="madlibs-form">
+                <div class="form-group">
+                    <label for="noun">Noun:</label>
+                    <input type="text" id="noun" placeholder="e.g., dragon" required>
+                </div>
+                <div class="form-group">
+                    <label for="number1">Number:</label>
+                    <input type="text" id="number1" placeholder="e.g., 7" required>
+                </div>
+                <div class="form-group">
+                    <label for="adjective1">Adjective:</label>
+                    <input type="text" id="adjective1" placeholder="e.g., fluffy" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Unit of Time:</label>
+                    <input type="text" id="time" placeholder="e.g., century" required>
+                </div>
+                <div class="form-group">
+                    <label for="adjective2">Adjective:</label>
+                    <input type="text" id="adjective2" placeholder="e.g., shiny" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">Website Name:</label>
+                    <input type="text" id="website" placeholder="e.g., dragonsrule.com" required>
+                </div>
+                <div class="form-group half-width">
+                    <label for="number2">Number:</label>
+                    <input type="text" id="number2" placeholder="e.g., 99" required>
+                </div>
+                <button type="submit">Generate MadWords</button>
+            </form>
+            
+            <!-- Story Title -->
+            <h2 id="story-title" class="story-title">Tom's Toothpaste Ad</h2>
+            
+            <!-- Story -->
+            <div id="story" class="story">
+                <p>Do you have really bad morning <span id="noun-result"></span>? Do your teeth have cavities even though you brush them <span id="number1-result"></span> times a day? Well, I've got something for you. Tom's Toothpaste is <span id="adjective1-result"></span> for cleaning teeth and cavities. In less than a <span id="time-result"></span>, your teeth will be <span id="adjective2-result"></span> and clean. Purchase Tom's Toothpaste now at <span id="website-result"></span> and get <span id="number2-result"></span> percent off!</p>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons initial-position">
+                <button class="home">Home</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+    </div>
 
-<script>
-// Random examples for placeholders
-const examples = {
-noun: ["question", "eye", "song", "door", "wind"],
-number1: ["3", "9.23", "5000", "-99", "0"],
-adjective1: ["afraid", "big", "dead", "fake", "true"],
-time: ["minute", "hour", "day", "century"],
-adjective2: ["far", "late", "tall", "young", "busy"],
-website: ["dragonsrule.com", "unicornmagic.net", "spaceshipcentral.org", "robotworld.io"],
-number2: ["-48.3", "29", "5.555", "20000", "0.01"]
-};
+    <script>
+        // Random examples for placeholders
+        const examples = {
+            noun: ["question", "eye", "song", "door", "wind"],
+            number1: ["3", "9.23", "5000", "-99", "0"],
+            adjective1: ["afraid", "big", "dead", "fake", "true"],
+            time: ["minute", "hour", "day", "century"],
+            adjective2: ["far", "late", "tall", "young", "busy"],
+            website: ["dragonsrule.com", "unicornmagic.net", "spaceshipcentral.org", "robotworld.io"],
+            number2: ["-48.3", "29", "5.555", "20000", "0.01"]
+        };
 
-// Set random placeholders
-document.getElementById('noun').placeholder = `e.g., ${examples.noun[Math.floor(Math.random() * examples.noun.length)]}`;
-document.getElementById('number1').placeholder = `e.g., ${examples.number1[Math.floor(Math.random() * examples.number1.length)]}`;
-document.getElementById('adjective1').placeholder = `e.g., ${examples.adjective1[Math.floor(Math.random() * examples.adjective1.length)]}`;
-document.getElementById('time').placeholder = `e.g., ${examples.time[Math.floor(Math.random() * examples.time.length)]}`;
-document.getElementById('adjective2').placeholder = `e.g., ${examples.adjective2[Math.floor(Math.random() * examples.adjective2.length)]}`;
-document.getElementById('website').placeholder = `e.g., ${examples.website[Math.floor(Math.random() * examples.website.length)]}`;
-document.getElementById('number2').placeholder = `e.g., ${examples.number2[Math.floor(Math.random() * examples.number2.length)]}`;
+        // Set random placeholders
+        document.getElementById('noun').placeholder = `e.g., ${examples.noun[Math.floor(Math.random() * examples.noun.length)]}`;
+        document.getElementById('number1').placeholder = `e.g., ${examples.number1[Math.floor(Math.random() * examples.number1.length)]}`;
+        document.getElementById('adjective1').placeholder = `e.g., ${examples.adjective1[Math.floor(Math.random() * examples.adjective1.length)]}`;
+        document.getElementById('time').placeholder = `e.g., ${examples.time[Math.floor(Math.random() * examples.time.length)]}`;
+        document.getElementById('adjective2').placeholder = `e.g., ${examples.adjective2[Math.floor(Math.random() * examples.adjective2.length)]}`;
+        document.getElementById('website').placeholder = `e.g., ${examples.website[Math.floor(Math.random() * examples.website.length)]}`;
+        document.getElementById('number2').placeholder = `e.g., ${examples.number2[Math.floor(Math.random() * examples.number2.length)]}`;
 
-// Form submission handler
-document.getElementById('madlibs-form').addEventListener('submit', function(event) {
-event.preventDefault();
+        // Form submission handler
+        document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-// Get input values
-const noun = document.getElementById('noun').value;
-const number1 = document.getElementById('number1').value;
-const adjective1 = document.getElementById('adjective1').value;
-const time = document.getElementById('time').value;
-const adjective2 = document.getElementById('adjective2').value;
-const website = document.getElementById('website').value;
-const number2 = document.getElementById('number2').value;
+            // Get input values
+            const noun = document.getElementById('noun').value;
+            const number1 = document.getElementById('number1').value;
+            const adjective1 = document.getElementById('adjective1').value;
+            const time = document.getElementById('time').value;
+            const adjective2 = document.getElementById('adjective2').value;
+            const website = document.getElementById('website').value;
+            const number2 = document.getElementById('number2').value;
 
-// Insert values into the story
-document.getElementById('noun-result').textContent = noun;
-document.getElementById('number1-result').textContent = number1;
-document.getElementById('adjective1-result').textContent = adjective1;
-document.getElementById('time-result').textContent = time;
-document.getElementById('adjective2-result').textContent = adjective2;
-document.getElementById('website-result').textContent = website;
-document.getElementById('number2-result').textContent = number2;
+            // Insert values into the story
+            document.getElementById('noun-result').textContent = noun;
+            document.getElementById('number1-result').textContent = number1;
+            document.getElementById('adjective1-result').textContent = adjective1;
+            document.getElementById('time-result').textContent = time;
+            document.getElementById('adjective2-result').textContent = adjective2;
+            document.getElementById('website-result').textContent = website;
+            document.getElementById('number2-result').textContent = number2;
 
-// Show the story title and story
-document.getElementById('story-title').classList.add('show');
-document.getElementById('story').classList.add('show');
+            // Show the story title and story
+            document.getElementById('story-title').classList.add('show');
+            document.getElementById('story').classList.add('show');
 
-// Move navigation buttons below the story
-const navButtons = document.querySelector('.navigation-buttons');
-navButtons.classList.remove('initial-position');
-navButtons.classList.add('story-position');
+            // Move navigation buttons below the story
+            const navButtons = document.querySelector('.navigation-buttons');
+            navButtons.classList.remove('initial-position');
+            navButtons.classList.add('story-position');
 
-// Scroll down to the story section
-document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
-});
+            // Scroll down to the story section
+            document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+        });
 
-// Home button functionality
-document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
-window.location.href = 'https://www.sagemotion.com/madwords-home-v00-01-01'; // Redirect to back.com
-});
+        // Home button functionality
+        document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+            window.location.href = 'https://www.sagemotion.com/madwords-home-v00-01-01'; // Redirect to back.com
+        });
 
-// Next button functionality
-document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
-window.location.href = 'https://www.sagemotion.com/madwords-002'; // Redirect to back.com
-});
-</script>
+        // Next button functionality
+        document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+            window.location.href = 'https://www.sagemotion.com/madwords-002'; // Redirect to back.com
+        });
+    </script>
 </body>
 </html>
