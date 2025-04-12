@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadWords: Medical Drama</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
+      color: #2e7d32; /* Dark green text */
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .squarespace-wrapper {
+      max-width: 800px; /* Adjust as needed */
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #388e3c; /* Medium green */
+      text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #81c784; /* Single light green border */
+      border-radius: 20px; /* Slightly rounded corners */
+      padding: 30px; /* Consistent padding */
+      width: 100%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #2e7d32; /* Dark green text */
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping of form elements */
+      gap: 15px; /* Space between form elements */
+      order: 0;
+    }
+
+    .form-group {
+      flex: 1 1 calc(50% - 15px); /* Always two inputs per line */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #388e3c; /* Medium green */
+      font-weight: bold;
+      margin-bottom: 5px;
+      cursor: pointer; /* Indicate that the label is interactive */
+    }
+
+    input {
+      padding: 12px;
+      border: 2px solid #81c784; /* Light green border */
+      border-radius: 10px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    /* Hide placeholder by default */
+    input::placeholder {
+      opacity: 0; /* Hide placeholder by default */
+      transition: opacity 0.3s ease;
+    }
+
+    /* Show placeholder when hovering over the label */
+    label:hover + input::placeholder {
+      opacity: 1; /* Show placeholder on hover */
+    }
+
+    input:focus {
+      border-color: #4caf50; /* Darker green on focus */
+      outline: none;
+    }
+
+    button {
+      background-color: #388e3c; /* Medium green */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      width: 100%; /* Full-width button */
+    }
+
+    button:hover {
+      background-color: #4caf50; /* Darker green on hover */
+      transform: scale(1.05);
+    }
+
+    /* Story Styles */
+    .story {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f8e9; /* Very light green background */
+      border: 2px solid #a5d6a7; /* Light green border */
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 1s ease;
+      text-align: left; /* Left-justify the story text */
+      order: 2;
+    }
+
+    .story.show {
+      display: block;
+    }
+
+    .story-title {
+      font-size: 1.5rem;
+      color: #388e3c; /* Medium green */
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center; /* Center the title */
+      display: none; /* Hidden by default */
+      order: 1;
+    }
+
+    .story-title.show {
+      display: block; /* Show when story is generated */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .story strong {
+      color: #388e3c; /* Medium green */
+    }
+
+    /* Underline typed-in words */
+    .story span {
+      text-decoration: underline;
+      text-decoration-skip-ink: none; /* Ensure underline appears below descenders */
+      font-weight: bold;
+      color: #388e3c; /* Medium green */
+    }
+
+    /* Navigation Buttons */
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      order: 3;
+    }
+
+    .navigation-buttons.initial-position {
+      order: 1; /* Appears after form by default */
+    }
+
+    .navigation-buttons.story-position {
+      order: 3; /* Moves after story when shown */
+      margin-top: 20px;
+    }
+
+    .navigation-buttons button {
+      width: 48%; /* Slightly less than half to account for gap */
+      margin: 0;
+      background-color: #4caf50; /* Green color for both buttons */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navigation-buttons button:hover {
+      background-color: #388e3c; /* Darker green on hover */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="squarespace-wrapper">
+    <div class="container">
+      <h1>MadWords: Medical Drama</h1>
+      <p>Fill in the blanks below, then read your horrible story!</p>
+      <form id="madlibs-form">
+        <div class="form-group">
+          <label for="height">Length:</label>
+          <input type="text" id="height" placeholder="e.g., 10 feet" required>
+        </div>
+        <div class="form-group">
+          <label for="bodyPart1">Body Part:</label>
+          <input type="text" id="bodyPart1" placeholder="e.g., head" required>
+        </div>
+        <div class="form-group">
+          <label for="typeOfSurgery1">Type of Surgery:</label>
+          <input type="text" id="typeOfSurgery1" placeholder="e.g., appendectomy" required>
+        </div>
+        <div class="form-group">
+          <label for="number1">Number:</label>
+          <input type="text" id="number1" placeholder="e.g., 5" required>
+        </div>
+        <div class="form-group">
+          <label for="bodyPart2">Body Part:</label>
+          <input type="text" id="bodyPart2" placeholder="e.g., ankle" required>
+        </div>
+        <div class="form-group">
+          <label for="number2">Number:</label>
+          <input type="text" id="number2" placeholder="e.g., 3" required>
+        </div>
+        <div class="form-group">
+          <label for="noun">Noun:</label>
+          <input type="text" id="noun" placeholder="e.g., stretcher" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective">Adjective:</label>
+          <input type="text" id="adjective" placeholder="e.g., critical" required>
+        </div>
+        <div class="form-group">
+          <label for="familyMember">Type of Family Member:</label>
+          <input type="text" id="familyMember" placeholder="e.g., mom" required>
+        </div>
+        <div class="form-group">
+          <label for="verb">Verb:</label>
+          <input type="text" id="verb" placeholder="e.g., cry" required>
+        </div>
+        <div class="form-group">
+          <label for="typeOfSurgery2">Type of Surgery:</label>
+          <input type="text" id="typeOfSurgery2" placeholder="e.g., bypass surgery" required>
+        </div>
+        <div class="form-group">
+          <label for="pluralNoun">Plural Noun:</label>
+          <input type="text" id="pluralNoun" placeholder="e.g., bones" required>
+        </div>
+        <div class="form-group">
+          <label for="exclamation">Exclamation:</label>
+          <input type="text" id="exclamation" placeholder="e.g., unbelievable!" required>
+        </div>
+        <button type="submit">Generate MadWords</button>
+      </form>
+      <!-- Story Title -->
+      <h2 id="story-title" class="story-title">Medical Drama</h2>
+      <!-- Story -->
+      <div id="story" class="story">
+        <p><strong>Nurse:</strong> Doctor! Doctor! Come quickly! A patient just fell off a <span id="height-result"></span> high diving board and landed <span id="bodyPart1-result"></span> first on the ground.</p>
+        <p><strong>Doctor:</strong> Oh, my! We better do <span id="typeOfSurgery1-result"></span>.</p>
+        <p><strong>Nurse:</strong> Yes, he broke <span id="number1-result"></span> bones, sprained his <span id="bodyPart2-result"></span>, and I think <span id="number2-result"></span> of his toes came off.</p>
+        <p><strong>Doctor:</strong> Quick, get him on a <span id="noun-result"></span> before he passes out.</p>
+        <p><strong>ONE HOUR LATER</strong></p>
+        <p><strong>Doctor:</strong> I'm sorry patient! Your condition is really <span id="adjective-result"></span>, you might not make it. Any last words?</p>
+        <p><strong>Patient:</strong> I love my <span id="familyMember-result"></span>!</p>
+        <p><strong>Nurse:</strong> Awww, I think I might <span id="verb-result"></span>.</p>
+        <p><strong>Doctor:</strong> Enough of that, we've got to do <span id="typeOfSurgery2-result"></span> before he actually dies.</p>
+        <p><strong>TWO HOURS LATER</strong></p>
+        <p><strong>Doctor:</strong> I've tried putting a <span id="adjective-result"></span> toe on; I've tried fixing his <span id="pluralNoun-result"></span>, but nothing seems to be working! I can't...</p>
+        <p><strong>Patient:</strong> April fools!</p>
+        <p><strong>Doctor:</strong> Are you kidding me! That's just <span id="exclamation-result"></span>!</p>
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons initial-position">
+        <button class="home">Home</button>
+        <button class="next">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Random examples for placeholders
+    const examples = {
+      height: ["10 feet", "20 inches", "500 kilometers", "1 centimeter"],
+      bodyPart1: ["head", "elbow", "knee", "shoulder", "foot"],
+      typeOfSurgery1: ["hip removal", "knee replacement", "heart bypass", "brain surgery"],
+      number1: ["-48.3", "29", "5.555", "20000", "0.01"],
+      bodyPart2: ["ankle", "wrist", "hip", "neck", "arm"],
+      number2: ["3", "9.23", "5000", "-99", "0"],
+      noun: ["word", "man", "day", "name", "face"],
+      adjective: ["cold", "sure", "soft", "old", "tired"],
+      familyMember: ["mother", "aunt", "cousin", "brother"],
+      verb: ["begin", "hit", "take", "sit", "win"],
+      typeOfSurgery2: ["hip removal", "knee replacement", "heart bypass", "brain surgery"],
+      pluralNoun: ["doctors", "papers", "sons", "vans", "pans"],
+      exclamation: ["unbelievable!", "ridiculous!", "crazy!", "insane!"]
+    };
+
+    // Set random placeholders
+    document.getElementById('height').placeholder = `e.g., ${examples.height[Math.floor(Math.random() * examples.height.length)]}`;
+    document.getElementById('bodyPart1').placeholder = `e.g., ${examples.bodyPart1[Math.floor(Math.random() * examples.bodyPart1.length)]}`;
+    document.getElementById('typeOfSurgery1').placeholder = `e.g., ${examples.typeOfSurgery1[Math.floor(Math.random() * examples.typeOfSurgery1.length)]}`;
+    document.getElementById('number1').placeholder = `e.g., ${examples.number1[Math.floor(Math.random() * examples.number1.length)]}`;
+    document.getElementById('bodyPart2').placeholder = `e.g., ${examples.bodyPart2[Math.floor(Math.random() * examples.bodyPart2.length)]}`;
+    document.getElementById('number2').placeholder = `e.g., ${examples.number2[Math.floor(Math.random() * examples.number2.length)]}`;
+    document.getElementById('noun').placeholder = `e.g., ${examples.noun[Math.floor(Math.random() * examples.noun.length)]}`;
+    document.getElementById('adjective').placeholder = `e.g., ${examples.adjective[Math.floor(Math.random() * examples.adjective.length)]}`;
+    document.getElementById('familyMember').placeholder = `e.g., ${examples.familyMember[Math.floor(Math.random() * examples.familyMember.length)]}`;
+    document.getElementById('verb').placeholder = `e.g., ${examples.verb[Math.floor(Math.random() * examples.verb.length)]}`;
+    document.getElementById('typeOfSurgery2').placeholder = `e.g., ${examples.typeOfSurgery2[Math.floor(Math.random() * examples.typeOfSurgery2.length)]}`;
+    document.getElementById('pluralNoun').placeholder = `e.g., ${examples.pluralNoun[Math.floor(Math.random() * examples.pluralNoun.length)]}`;
+    document.getElementById('exclamation').placeholder = `e.g., ${examples.exclamation[Math.floor(Math.random() * examples.exclamation.length)]}`;
+
+    // Form submission handler
+    document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get input values
+      const height = document.getElementById('height').value;
+      const bodyPart1 = document.getElementById('bodyPart1').value;
+      const typeOfSurgery1 = document.getElementById('typeOfSurgery1').value;
+      const number1 = document.getElementById('number1').value;
+      const bodyPart2 = document.getElementById('bodyPart2').value;
+      const number2 = document.getElementById('number2').value;
+      const noun = document.getElementById('noun').value;
+      const adjective = document.getElementById('adjective').value;
+      const familyMember = document.getElementById('familyMember').value;
+      const verb = document.getElementById('verb').value;
+      const typeOfSurgery2 = document.getElementById('typeOfSurgery2').value;
+      const pluralNoun = document.getElementById('pluralNoun').value;
+      const exclamation = document.getElementById('exclamation').value;
+
+      // Insert values into the story
+      document.getElementById('height-result').textContent = height;
+      document.getElementById('bodyPart1-result').textContent = bodyPart1;
+      document.getElementById('typeOfSurgery1-result').textContent = typeOfSurgery1;
+      document.getElementById('number1-result').textContent = number1;
+      document.getElementById('bodyPart2-result').textContent = bodyPart2;
+      document.getElementById('number2-result').textContent = number2;
+      document.getElementById('noun-result').textContent = noun;
+      document.getElementById('adjective-result').textContent = adjective;
+      document.getElementById('familyMember-result').textContent = familyMember;
+      document.getElementById('verb-result').textContent = verb;
+      document.getElementById('typeOfSurgery2-result').textContent = typeOfSurgery2;
+      document.getElementById('pluralNoun-result').textContent = pluralNoun;
+      document.getElementById('exclamation-result').textContent = exclamation;
+
+      // Show the story title and story
+      document.getElementById('story-title').classList.add('show');
+      document.getElementById('story').classList.add('show');
+
+      // Move navigation buttons below the story
+      const navButtons = document.querySelector('.navigation-buttons');
+      navButtons.classList.remove('initial-position');
+      navButtons.classList.add('story-position');
+
+      // Scroll down to the story section
+      document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Home button functionality
+    document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+      window.location.href = 'https://www.sagemotion.com/madwords-home-v00-01-01'; // Redirect to home page
+    });
+
+    // Next button functionality
+    document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+      window.location.href = 'https://www.sagemotion.com/madwords-005'; // Redirect to next page
+    });
+  </script>
+</body>
+</html>
