@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Play - MadWords</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
+      color: #2e7d32; /* Dark green text */
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .squarespace-wrapper {
+      max-width: 800px; /* Adjust as needed */
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #388e3c; /* Medium green */
+      text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #81c784; /* Single light green border */
+      border-radius: 20px; /* Slightly rounded corners */
+      padding: 30px; /* Consistent padding */
+      width: 100%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #2e7d32; /* Dark green text */
+    }
+
+    h2 {
+      color: #388e3c; /* Medium green (same as title) */
+      font-size: 2rem;
+      text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
+      margin: 20px 0 10px;
+    }
+
+    ol, ul {
+      text-align: left;
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    ol li, ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #2e7d32; /* Dark green text */
+    }
+
+    strong {
+      color: #388e3c; /* Medium green */
+    }
+
+    .back-button {
+      background-color: #66bb6a; /* Medium green */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background-color: #4caf50; /* Darker green on hover */
+      transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      ol li, ul li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="squarespace-wrapper">
+    <div class="container">
+      <h1>How to Play MadWords</h1>
+      <p>Learn how to create hilarious stories with MadWords!</p>
+
+      <h2>How to Play</h2>
+      <ol>
+        <li><strong>Pick a story</strong> template from the main page.</li>
+        <li><strong>Fill in the Blanks</strong> with the requested words (e.g., an adjective, a noun, a verb).</li>
+        <li><strong>Click "Generate Story"</strong> to see your completed MadWord.</li>
+        <li><strong>Share your story</strong> with friends and enjoy the laughs!</li>
+      </ol>
+
+      <h2>Tips for Maximum Fun</h2>
+      <ul>
+        <li>Use silly or unexpected words for the funniest results.</li>
+        <li>Play with friends and take turns filling in the blanks.</li>
+        <li>Try different themes to keep things fresh and exciting.</li>
+      </ul>
+
+      <!-- Back Button -->
+      <a href="https://www.sagemotion.com/madwords-home-v00-01-01" class="back-button">← Back to MadWords</a>
+    </div>
+  </div>
+</body>
+</html>
