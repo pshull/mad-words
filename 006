@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadWords: How to Make a PB&J</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
+      color: #2e7d32; /* Dark green text */
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .squarespace-wrapper {
+      max-width: 800px; /* Adjust as needed */
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #388e3c; /* Medium green */
+      text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #81c784; /* Single light green border */
+      border-radius: 20px; /* Slightly rounded corners */
+      padding: 30px; /* Consistent padding */
+      width: 100%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #2e7d32; /* Dark green text */
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping of form elements */
+      gap: 15px; /* Space between form elements */
+      order: 0;
+    }
+
+    .form-group {
+      flex: 1 1 calc(50% - 15px); /* Always two inputs per line */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #388e3c; /* Medium green */
+      font-weight: bold;
+      margin-bottom: 5px;
+      cursor: pointer; /* Indicate that the label is interactive */
+    }
+
+    input {
+      padding: 12px;
+      border: 2px solid #81c784; /* Light green border */
+      border-radius: 10px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    /* Hide placeholder by default */
+    input::placeholder {
+      opacity: 0; /* Hide placeholder by default */
+      transition: opacity 0.3s ease;
+    }
+
+    /* Show placeholder when hovering over the label */
+    label:hover + input::placeholder {
+      opacity: 1; /* Show placeholder on hover */
+    }
+
+    input:focus {
+      border-color: #4caf50; /* Darker green on focus */
+      outline: none;
+    }
+
+    button {
+      background-color: #388e3c; /* Medium green */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      width: 100%; /* Full-width button */
+    }
+
+    button:hover {
+      background-color: #4caf50; /* Darker green on hover */
+      transform: scale(1.05);
+    }
+
+    /* Story Styles */
+    .story {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f8e9; /* Very light green background */
+      border: 2px solid #a5d6a7; /* Light green border */
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 1s ease;
+      text-align: left; /* Left-justify the story text */
+      order: 2;
+    }
+
+    .story.show {
+      display: block;
+    }
+
+    .story-title {
+      font-size: 1.5rem;
+      color: #388e3c; /* Medium green */
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center; /* Center the title */
+      display: none; /* Hidden by default */
+      order: 1;
+    }
+
+    .story-title.show {
+      display: block; /* Show when story is generated */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Underline typed-in words */
+    .story span {
+      text-decoration: underline;
+      text-decoration-skip-ink: none; /* Ensure underline appears below descenders */
+      font-weight: bold;
+      color: #388e3c; /* Medium green */
+    }
+
+    /* Navigation Buttons */
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      order: 3;
+    }
+
+    .navigation-buttons.initial-position {
+      order: 1; /* Appears after form by default */
+    }
+
+    .navigation-buttons.story-position {
+      order: 3; /* Moves after story when shown */
+      margin-top: 20px;
+    }
+
+    .navigation-buttons button {
+      width: 48%; /* Slightly less than half to account for gap */
+      margin: 0;
+      background-color: #4caf50; /* Green color for both buttons */
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navigation-buttons button:hover {
+      background-color: #388e3c; /* Darker green on hover */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="squarespace-wrapper">
+    <div class="container">
+      <h1>MadWords: How to Make a PB&J</h1>
+      <p>Fill in the blanks below, then read your hilarious story!</p>
+      <form id="madlibs-form">
+        <div class="form-group">
+          <label for="food">Type of Food:</label>
+          <input type="text" id="food" placeholder="e.g., spaghetti" required>
+        </div>
+        <div class="form-group">
+          <label for="liquid">Liquid:</label>
+          <input type="text" id="liquid" placeholder="e.g., orange juice" required>
+        </div>
+        <div class="form-group">
+          <label for="appliance1">Kitchen Appliance:</label>
+          <input type="text" id="appliance1" placeholder="e.g., toaster" required>
+        </div>
+        <div class="form-group">
+          <label for="number1">Number:</label>
+          <input type="text" id="number1" placeholder="e.g., 3" required>
+        </div>
+        <div class="form-group">
+          <label for="verb1">Verb:</label>
+          <input type="text" id="verb1" placeholder="e.g., dance" required>
+        </div>
+        <div class="form-group">
+          <label for="verb2">Verb:</label>
+          <input type="text" id="verb2" placeholder="e.g., juggle" required>
+        </div>
+        <div class="form-group">
+          <label for="food2">Type of Food:</label>
+          <input type="text" id="food2" placeholder="e.g., pizza" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective">Adjective:</label>
+          <input type="text" id="adjective" placeholder="e.g., sparkly" required>
+        </div>
+        <div class="form-group">
+          <label for="verb3">Verb (ending in -ed):</label>
+          <input type="text" id="verb3" placeholder="e.g., melted" required>
+        </div>
+        <div class="form-group">
+          <label for="timeUnit">Unit of Time (plural):</label>
+          <input type="text" id="timeUnit" placeholder="e.g., minutes" required>
+        </div>
+        <div class="form-group">
+          <label for="number2">Number:</label>
+          <input type="text" id="number2" placeholder="e.g., 12" required>
+        </div>
+        <div class="form-group">
+          <label for="appliance2">Kitchen Appliance:</label>
+          <input type="text" id="appliance2" placeholder="e.g., microwave" required>
+        </div>
+        <div class="form-group">
+          <label for="exclamation">Exclamation:</label>
+          <input type="text" id="exclamation" placeholder="e.g., Voila!" required>
+        </div>
+        <button type="submit">Generate MadWords</button>
+      </form>
+      <!-- Story Title -->
+      <h2 id="story-title" class="story-title">How to Make a PB&J Sandwich</h2>
+      <!-- Story -->
+      <div id="story" class="story">
+        <p>These are instructions for how to make a peanut butter and jelly sandwich. First, you go to a <span id="food-result"></span> farm and gather some wheat, grind it up and mix it with <span id="liquid-result"></span>, then put it in the <span id="appliance1-result"></span>. Now you have a loaf of bread, cut <span id="number1-result"></span> slices off.</p>
+        <p>Next, get some peanuts and <span id="verb1-result"></span> them up, add a teaspoon of sugar and <span id="verb2-result"></span> it onto the bread. Then, get 3 strawberries, lemon <span id="food2-result"></span>, sugar, and water. Cut up the strawberries into small pieces, and add the sugar to <span id="adjective-result"></span> water.</p>
+        <p>Wait until the sugar is <span id="verb3-result"></span>, then add lemon zest and strawberries. After 20 <span id="timeUnit-result"></span>, pour the jam into a jar and let it cool in the fridge for <span id="number2-result"></span> hours. Then, take the jam out of the <span id="appliance2-result"></span> and spread it on to the other slice of bread.</p>
+        <p>Now, put the peanut butter bread slice and the jam bread slice together. And there you have your very own peanut butter and jelly sandwich. <span id="exclamation-result"></span>!</p>
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons initial-position">
+        <button class="home">Home</button>
+        <button class="next">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Random examples for placeholders
+    const examples = {
+      food: ["pizza", "salad", "noodles", "celery", "bread"],
+      liquid: ["oil", "juice", "salt water", "red dye"],
+      appliance1: ["mixer", "oven", "toaster", "sink"],
+      number1:  ["-48.3", "29", "5.555", "20000", "0.01"],
+      verb1: ["cut", "eat", "steal", "ring", "send"],
+      verb2: ["leave", "swim", "spread", "lie", "dig"],
+      food2: ["kale", "hamburger", "ice cream", "rice", "soup"],
+      adjective: ["cold", "sure", "soft", "old", "tired"],
+      verb3: ["begin", "hit", "take", "sit", "win"],
+      timeUnit: ["minute", "hour", "day", "century"],
+      number2: ["3", "9.23", "5000", "-99", "0"],
+      appliance2: ["blender", "coffee machine", "refrigerator", "microwave"],
+      exclamation: ["unbelievable!", "ridiculous!", "crazy!", "insane!"],
+    };
+
+    // Set random placeholders
+    for (const key in examples) {
+      const input = document.getElementById(key);
+      if (input) {
+        input.placeholder = `e.g., ${examples[key][Math.floor(Math.random() * examples[key].length)]}`;
+      }
+    }
+
+    // Form submission handler
+    document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get input values
+      const food = document.getElementById('food').value;
+      const liquid = document.getElementById('liquid').value;
+      const appliance1 = document.getElementById('appliance1').value;
+      const number1 = document.getElementById('number1').value;
+      const verb1 = document.getElementById('verb1').value;
+      const verb2 = document.getElementById('verb2').value;
+      const food2 = document.getElementById('food2').value;
+      const adjective = document.getElementById('adjective').value;
+      const verb3 = document.getElementById('verb3').value;
+      const timeUnit = document.getElementById('timeUnit').value;
+      const number2 = document.getElementById('number2').value;
+      const appliance2 = document.getElementById('appliance2').value;
+      const exclamation = document.getElementById('exclamation').value;
+
+      // Insert values into the story
+      document.getElementById('food-result').textContent = food;
+      document.getElementById('liquid-result').textContent = liquid;
+      document.getElementById('appliance1-result').textContent = appliance1;
+      document.getElementById('number1-result').textContent = number1;
+      document.getElementById('verb1-result').textContent = verb1;
+      document.getElementById('verb2-result').textContent = verb2;
+      document.getElementById('food2-result').textContent = food2;
+      document.getElementById('adjective-result').textContent = adjective;
+      document.getElementById('verb3-result').textContent = verb3;
+      document.getElementById('timeUnit-result').textContent = timeUnit;
+      document.getElementById('number2-result').textContent = number2;
+      document.getElementById('appliance2-result').textContent = appliance2;
+      document.getElementById('exclamation-result').textContent = exclamation;
+
+      // Show the story title and story
+      document.getElementById('story-title').classList.add('show');
+      document.getElementById('story').classList.add('show');
+
+      // Move navigation buttons below the story
+      const navButtons = document.querySelector('.navigation-buttons');
+      navButtons.classList.remove('initial-position');
+      navButtons.classList.add('story-position');
+
+      // Scroll down to the story section
+      document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Home button functionality
+    document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+      window.location.href = 'https://www.sagemotion.com/madwords-home-v00-01-01';
+    });
+
+    // Next button functionality
+    document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+      window.location.href = 'https://www.sagemotion.com/madwords-007';
+    });
+  </script>
+</body>
+</html>
