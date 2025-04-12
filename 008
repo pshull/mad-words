@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadWords: My Most Embarrassing Moment</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+      color: #2e7d32;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .squarespace-wrapper {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #388e3c;
+      text-shadow: 2px 2px #a5d6a7;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #81c784;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      order: 0;
+    }
+
+    .form-group {
+      flex: 1 1 calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 12px;
+      border: 2px solid #81c784;
+      border-radius: 10px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    input::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    label:hover + input::placeholder {
+      opacity: 1;
+    }
+
+    input:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+
+    button {
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #4caf50;
+      transform: scale(1.05);
+    }
+
+    /* Story Styles */
+    .story {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border: 2px solid #a5d6a7;
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 1s ease;
+      text-align: left;
+      order: 2;
+    }
+
+    .story.show {
+      display: block;
+    }
+
+    .story-title {
+      font-size: 1.5rem;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      display: none;
+      order: 1;
+    }
+
+    .story-title.show {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .story span {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      font-weight: bold;
+      color: #388e3c;
+    }
+
+    /* Navigation Buttons */
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      order: 3;
+    }
+
+    .navigation-buttons.initial-position {
+      order: 1;
+    }
+
+    .navigation-buttons.story-position {
+      order: 3;
+      margin-top: 20px;
+    }
+
+    .navigation-buttons button {
+      width: 48%;
+      margin: 0;
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navigation-buttons button:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="squarespace-wrapper">
+    <div class="container">
+      <h1>MadWords: My Most Embarrassing Moment</h1>
+      <p>Fill in the blanks below to create your embarrassing story!</p>
+      <form id="madlibs-form">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" placeholder="e.g., Alex" required>
+        </div>
+        <div class="form-group">
+          <label for="place">Place:</label>
+          <input type="text" id="place" placeholder="e.g., park" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective1">Adjective:</label>
+          <input type="text" id="adjective1" placeholder="e.g., nervous" required>
+        </div>
+        <div class="form-group">
+          <label for="noun">Noun:</label>
+          <input type="text" id="noun" placeholder="e.g., wind" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective2">Adjective:</label>
+          <input type="text" id="adjective2" placeholder="e.g., awesome" required>
+        </div>
+        <div class="form-group">
+          <label for="animal">Animal:</label>
+          <input type="text" id="animal" placeholder="e.g., butterfly" required>
+        </div>
+        <div class="form-group">
+          <label for="exclamation">Exclamation:</label>
+          <input type="text" id="exclamation" placeholder="e.g., Oh no!" required>
+        </div>
+        <div class="form-group">
+          <label for="insult">Insulting Word:</label>
+          <input type="text" id="insult" placeholder="e.g., clumsy" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective3">Adjective:</label>
+          <input type="text" id="adjective3" placeholder="e.g., brave" required>
+        </div>
+        <button type="submit">Generate MadWords</button>
+      </form>
+      <!-- Story Title -->
+      <h2 id="story-title" class="story-title">My Most Embarrassing Moment</h2>
+      <!-- Story -->
+      <div id="story" class="story">
+        <p>My most embarrassing moment, written by <span id="name-result"></span>. My most embarrassing moment happened when I was on my bike riding to <span id="place-result"></span>. It was my first time riding my bike without training wheels. I was a little <span id="adjective1-result"></span> at first, but after a while I got the hang of it. The <span id="noun-result"></span> blew past me, and it felt pretty <span id="adjective2-result"></span> to be able to ride my bike.</p>
+        <p>But then I saw a really beautiful black and gold <span id="animal-result"></span> land on my hand. It was so beautiful that I couldn't take my eyes off it. Then <span id="exclamation-result"></span>! I crashed into a businessman who was holding a bunch of papers. All his papers fell to the ground, and he was so angry he yelled "<span id="insult-result"></span>!" at me.</p>
+        <p>My bike also fell on him, and I wasn't even <span id="adjective3-result"></span> enough to pick it up so I just stood there waiting for him to stop yelling and push the bike off. I sure don't want that to happen ever again!</p>
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons initial-position">
+        <button class="home">Home</button>
+        <button class="next">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Random examples for placeholders
+    const examples = {
+      name: ["Alex", "Jamie", "Taylor", "Casey"],
+      place: ["home", "Canada", "the ocean", "the beach"],
+      adjective1: ["cold", "sure", "soft", "old", "tired"],
+      noun: ["question", "eye", "song", "door", "wind"],
+      adjective2:  ["far", "late", "tall", "young", "busy"],
+      animal: ["cat", "trout", "tiger", "bird", "panda"],
+      exclamation: ["unbelievable!", "ridiculous!", "crazy!", "insane!"],
+      insult: ["clumsy", "idiot", "fool", "moron"],
+      adjective3: ["far", "late", "tall", "young", "busy"]
+    };
+
+    // Set random placeholders
+    for (const key in examples) {
+      const input = document.getElementById(key);
+      if (input) {
+        input.placeholder = `e.g., ${examples[key][Math.floor(Math.random() * examples[key].length)]}`;
+      }
+    }
+
+    // Form submission handler
+    document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get input values
+      const name = document.getElementById('name').value;
+      const place = document.getElementById('place').value;
+      const adjective1 = document.getElementById('adjective1').value;
+      const noun = document.getElementById('noun').value;
+      const adjective2 = document.getElementById('adjective2').value;
+      const animal = document.getElementById('animal').value;
+      const exclamation = document.getElementById('exclamation').value;
+      const insult = document.getElementById('insult').value;
+      const adjective3 = document.getElementById('adjective3').value;
+
+      // Insert values into the story
+      document.getElementById('name-result').textContent = name;
+      document.getElementById('place-result').textContent = place;
+      document.getElementById('adjective1-result').textContent = adjective1;
+      document.getElementById('noun-result').textContent = noun;
+      document.getElementById('adjective2-result').textContent = adjective2;
+      document.getElementById('animal-result').textContent = animal;
+      document.getElementById('exclamation-result').textContent = exclamation;
+      document.getElementById('insult-result').textContent = insult;
+      document.getElementById('adjective3-result').textContent = adjective3;
+
+      // Show the story title and story
+      document.getElementById('story-title').classList.add('show');
+      document.getElementById('story').classList.add('show');
+
+      // Move navigation buttons below the story
+      const navButtons = document.querySelector('.navigation-buttons');
+      navButtons.classList.remove('initial-position');
+      navButtons.classList.add('story-position');
+
+      // Scroll down to the story section
+      document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Home button functionality
+    document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+      window.location.href = 'https://www.sagemotion.com/madwords-home-v00-01-01';
+    });
+
+    // Next button functionality
+    document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+      window.location.href = 'https://www.sagemotion.com/madwords-009';
+    });
+  </script>
+</body>
+</html>
