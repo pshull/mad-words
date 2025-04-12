@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords: Gnocchi</title>
   <style>
-    /* General Styles */
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -53,7 +52,6 @@
       color: #2e7d32;
     }
 
-    /* Form Styles */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -118,7 +116,6 @@
       transform: scale(1.05);
     }
 
-    /* Story Styles */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -163,7 +160,6 @@
       color: #388e3c;
     }
 
-    /* Navigation Buttons */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -259,16 +255,13 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
-      <!-- Story Title -->
       <h2 id="story-title" class="story-title">My Favorite Food: Gnocchi</h2>
-      <!-- Story -->
       <div id="story" class="story">
         <p>My favorite food is definitely gnocchi. Why? I thought you'd never ask. The word gnocchi comes from the <span id="language-result"></span> word nocca, which means <span id="noun-result"></span>. It was invented in the year <span id="year-result"></span>. Wow, only 145 <span id="time-unit-result"></span> ago!</p>
         <p>In case you don't know what gnocchi is, it's these <span id="shape-result"></span> shaped dough balls made from flour, potatoes, cheese, and <span id="food-plural-result"></span>. Gnocchi is crunchy on the outside and <span id="adjective1-result"></span> on the inside. That's the best combo! It tastes like a mix between pasta and <span id="food1-result"></span>.</p>
         <p>If you eat gnocchi straight up, it's pretty good, but if it doesn't have enough flavor, you can add tomato sauce, pesto sauce, <span id="food2-result"></span> sauce, or <span id="food3-result"></span> sauce. You can add anything, and it tastes really <span id="adjective2-result"></span>!</p>
         <p>If that isn't enough for you, then just look at the cute little gnocchis; they're so <span id="adjective3-result"></span>! But don't feel bad eating the cute little gnocchis. If your mouth isn't watering yet, you should go see a/an <span id="occupation-result"></span>.</p>
       </div>
-      <!-- Navigation Buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -277,7 +270,6 @@
   </div>
 
   <script>
-    // Random examples for placeholders
     const examples = {
       language: ["Italian", "French", "Chinese", "Roman"],
       noun: ["question", "eye", "song", "door", "wind"],
@@ -294,7 +286,6 @@
       occupation: ["chef", "poet", "teacher", "gardener"]
     };
 
-    // Set random placeholders
     for (const key in examples) {
       const input = document.getElementById(key);
       if (input) {
@@ -302,11 +293,9 @@
       }
     }
 
-    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Get input values
       const language = document.getElementById('language').value;
       const noun = document.getElementById('noun').value;
       const year = document.getElementById('year').value;
@@ -321,7 +310,6 @@
       const adjective3 = document.getElementById('adjective3').value;
       const occupation = document.getElementById('occupation').value;
 
-      // Insert values into the story
       document.getElementById('language-result').textContent = language;
       document.getElementById('noun-result').textContent = noun;
       document.getElementById('year-result').textContent = year;
@@ -336,25 +324,20 @@
       document.getElementById('adjective3-result').textContent = adjective3;
       document.getElementById('occupation-result').textContent = occupation;
 
-      // Show the story title and story
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
-      // Move navigation buttons below the story
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
-      // Scroll down to the story section
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Home button functionality
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
-    // Next button functionality
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/008';
     });
