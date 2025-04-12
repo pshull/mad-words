@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords: Letter from an Alien</title>
   <style>
-    /* General Styles */
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Light green gradient */
-      color: #2e7d32; /* Dark green text */
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+      color: #2e7d32;
       text-align: center;
       padding: 20px;
       margin: 0;
@@ -21,7 +20,7 @@
     }
 
     .squarespace-wrapper {
-      max-width: 800px; /* Adjust as needed */
+      max-width: 800px;
       width: 100%;
       margin: 0 auto;
       padding: 20px;
@@ -30,16 +29,16 @@
 
     h1 {
       font-size: 3rem;
-      color: #388e3c; /* Medium green */
-      text-shadow: 2px 2px #a5d6a7; /* Light green shadow */
+      color: #388e3c;
+      text-shadow: 2px 2px #a5d6a7;
       margin-bottom: 20px;
     }
 
     .container {
       background-color: rgba(255, 255, 255, 0.9);
-      border: 2px solid #81c784; /* Single light green border */
-      border-radius: 20px; /* Slightly rounded corners */
-      padding: 30px; /* Consistent padding */
+      border: 2px solid #81c784;
+      border-radius: 20px;
+      padding: 30px;
       width: 100%;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
@@ -50,19 +49,18 @@
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
-      color: #2e7d32; /* Dark green text */
+      color: #2e7d32;
     }
 
-    /* Form Styles */
     form {
       display: flex;
-      flex-wrap: wrap; /* Allow wrapping of form elements */
-      gap: 15px; /* Space between form elements */
+      flex-wrap: wrap;
+      gap: 15px;
       order: 0;
     }
 
     .form-group {
-      flex: 1 1 calc(50% - 15px); /* Always two inputs per line */
+      flex: 1 1 calc(50% - 15px);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -70,15 +68,15 @@
 
     label {
       font-size: 1.1rem;
-      color: #388e3c; /* Medium green */
+      color: #388e3c;
       font-weight: bold;
       margin-bottom: 5px;
-      cursor: pointer; /* Indicate that the label is interactive */
+      cursor: pointer;
     }
 
     input {
       padding: 12px;
-      border: 2px solid #81c784; /* Light green border */
+      border: 2px solid #81c784;
       border-radius: 10px;
       font-size: 1rem;
       width: 100%;
@@ -86,24 +84,22 @@
       transition: border-color 0.3s ease;
     }
 
-    /* Hide placeholder by default */
     input::placeholder {
-      opacity: 0; /* Hide placeholder by default */
+      opacity: 0;
       transition: opacity 0.3s ease;
     }
 
-    /* Show placeholder when hovering over the label */
     label:hover + input::placeholder {
-      opacity: 1; /* Show placeholder on hover */
+      opacity: 1;
     }
 
     input:focus {
-      border-color: #4caf50; /* Darker green on focus */
+      border-color: #4caf50;
       outline: none;
     }
 
     button {
-      background-color: #388e3c; /* Medium green */
+      background-color: #388e3c;
       color: white;
       padding: 12px 24px;
       border: none;
@@ -112,26 +108,25 @@
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
       margin-top: 20px;
-      width: 100%; /* Full-width button */
+      width: 100%;
     }
 
     button:hover {
-      background-color: #4caf50; /* Darker green on hover */
+      background-color: #4caf50;
       transform: scale(1.05);
     }
 
-    /* Story Styles */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
       margin-top: 20px;
       padding: 20px;
-      background-color: #f1f8e9; /* Very light green background */
-      border: 2px solid #a5d6a7; /* Light green border */
+      background-color: #f1f8e9;
+      border: 2px solid #a5d6a7;
       border-radius: 10px;
       display: none;
       animation: fadeIn 1s ease;
-      text-align: left; /* Left-justify the story text */
+      text-align: left;
       order: 2;
     }
 
@@ -141,16 +136,16 @@
 
     .story-title {
       font-size: 1.5rem;
-      color: #388e3c; /* Medium green */
+      color: #388e3c;
       font-weight: bold;
       margin-bottom: 10px;
-      text-align: center; /* Center the title */
-      display: none; /* Hidden by default */
+      text-align: center;
+      display: none;
       order: 1;
     }
 
     .story-title.show {
-      display: block; /* Show when story is generated */
+      display: block;
     }
 
     @keyframes fadeIn {
@@ -158,15 +153,13 @@
       to { opacity: 1; }
     }
 
-    /* Underline typed-in words */
     .story span {
       text-decoration: underline;
-      text-decoration-skip-ink: none; /* Ensure underline appears below descenders */
+      text-decoration-skip-ink: none;
       font-weight: bold;
-      color: #388e3c; /* Medium green */
+      color: #388e3c;
     }
 
-    /* Navigation Buttons */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -175,18 +168,18 @@
     }
 
     .navigation-buttons.initial-position {
-      order: 1; /* Appears after form by default */
+      order: 1;
     }
 
     .navigation-buttons.story-position {
-      order: 3; /* Moves after story when shown */
+      order: 3;
       margin-top: 20px;
     }
 
     .navigation-buttons button {
-      width: 48%; /* Slightly less than half to account for gap */
+      width: 48%;
       margin: 0;
-      background-color: #4caf50; /* Green color for both buttons */
+      background-color: #4caf50;
       color: white;
       padding: 12px 24px;
       border: none;
@@ -197,7 +190,7 @@
     }
 
     .navigation-buttons button:hover {
-      background-color: #388e3c; /* Darker green on hover */
+      background-color: #388e3c;
       transform: scale(1.05);
     }
   </style>
@@ -246,14 +239,11 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
-      <!-- Story Title -->
       <h2 id="story-title" class="story-title">Letter from an Alien</h2>
-      <!-- Story -->
       <div id="story" class="story">
         <p>Hello, my name is <span id="alien-name-result"></span>. I want to know more about you <span id="plural-noun-result"></span> (sorry, if I called you the wrong name). So, I sent you this letter. In Alienia, we call it a letter a <span id="noun-result"></span>. Why are your words so <span id="adjective1-result"></span>? What do you usually eat for meals?</p>
         <p>In Alienia, we mainly eat <span id="food-name-result"></span> (which is fried <span id="food-result"></span> with shredded stardust on top) and drink <span id="drink-name-result"></span> (which is hot milk mixed with <span id="adjective2-result"></span> juice). <span id="silly-word-result"></span>! P.S. That's how we say ByeBye in Alienia.</p>
       </div>
-      <!-- Navigation Buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -262,7 +252,6 @@
   </div>
 
   <script>
-    // Random examples for placeholders
     const examples = {
       alienName: ["Zorbax", "Gleep", "Blork", "Fizzlepop"],
       pluralNoun: ["doctors", "papers", "sons", "vans", "pans"],
@@ -275,7 +264,6 @@
       sillyWord: ["Zoodle", "Gleep", "Blork", "Fizzlepop"]
     };
 
-    // Set random placeholders
     for (const key in examples) {
       const input = document.getElementById(key.replace(/([A-Z])/g, '-$1').toLowerCase());
       if (input) {
@@ -283,11 +271,9 @@
       }
     }
 
-    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Get input values
       const alienName = document.getElementById('alien-name').value;
       const pluralNoun = document.getElementById('plural-noun').value;
       const noun = document.getElementById('noun').value;
@@ -298,7 +284,6 @@
       const adjective2 = document.getElementById('adjective2').value;
       const sillyWord = document.getElementById('silly-word').value;
 
-      // Insert values into the story
       document.getElementById('alien-name-result').textContent = alienName;
       document.getElementById('plural-noun-result').textContent = pluralNoun;
       document.getElementById('noun-result').textContent = noun;
@@ -309,25 +294,20 @@
       document.getElementById('adjective2-result').textContent = adjective2;
       document.getElementById('silly-word-result').textContent = sillyWord;
 
-      // Show the story title and story
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
-      // Move navigation buttons below the story
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
-      // Scroll down to the story section
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Home button functionality
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
-    // Next button functionality
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/004';
     });
