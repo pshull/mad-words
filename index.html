@@ -16,7 +16,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
       min-height: 100vh;
     }
 
@@ -25,12 +24,13 @@
       width: 100%;
       max-width: 1200px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     h1 {
       color: #388e3c;
       font-size: 3rem;
-      text-shadow: 2px 2px #a5d6a7;]
+      text-shadow: 2px 2px #a5d6a7;
       margin: 20px 0;
     }
 
@@ -109,25 +109,32 @@
       transform: scale(1.05);
     }
 
-    /* Footer */
+    /* Footer - Improved Centering */
     footer {
-      margin-top: 50px;
-      color: #2e7d32;
-      font-size: 0.9rem;
+      margin-top: auto; /* Pushes footer to bottom */
+      padding: 20px 0;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer p {
+      margin: 0; /* Remove default paragraph margins */
       text-align: center;
+      width: 100%;
     }
 
     /* Responsive Design */
     @media (max-width: 1200px) {
       .madlibs-container {
-        grid-template-columns: repeat(3, 1fr); /* Three cards per row on smaller screens */
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     @media (max-width: 800px) {
       .madlibs-container {
-        grid-template-columns: repeat(2, 1fr); /* Two cards per row on even smaller screens */
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -141,7 +148,7 @@
       }
 
       .madlibs-container {
-        grid-template-columns: 1fr; /* One card per row on mobile */
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -218,7 +225,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer - Now perfectly centered -->
   <footer>
     <p>© 2025 MadWords - All rights reserved</p>
   </footer>
