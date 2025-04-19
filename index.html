@@ -80,11 +80,15 @@
       align-items: center;
       min-height: 150px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
 
     .madlib-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 1);
     }
 
     .madlib-card h3 {
@@ -92,21 +96,7 @@
       font-size: 1.5rem;
       margin: 0 0 15px;
       text-align: center;
-    }
-
-    .madlib-card a {
-      text-decoration: none;
-      padding: 10px 20px;
-      background-color: #66bb6a;
-      color: white;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .madlib-card a:hover {
-      background-color: #4caf50;
-      transform: scale(1.05);
+      pointer-events: none; /* Prevents the text from blocking clicks */
     }
 
     /* Footer - Improved Centering */
@@ -165,64 +155,54 @@
   <!-- Madlib Listings -->
   <div class="madlibs-container">
     <!-- Madlib 1 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/001" class="madlib-card">
       <h3>An Advertisement for Toothpaste</h3>
-      <a href="https://www.mad-words.com/001">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 2 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/002" class="madlib-card">
       <h3>Once Upon a Sunny Sunday Morning</h3>
-      <a href="https://www.mad-words.com/002">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 3 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/003" class="madlib-card">
       <h3>Letter from an Alien</h3>
-      <a href="https://www.mad-words.com/003">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 4 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/004" class="madlib-card">
       <h3>Medical Drama</h3>
-      <a href="https://www.mad-words.com/004">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 5 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/005" class="madlib-card">
       <h3>A Romantic Night</h3>
-      <a href="https://www.mad-words.com/005">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 6 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/006" class="madlib-card">
       <h3>How to Make a PB&J</h3>
-      <a href="https://www.mad-words.com/006">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 7 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/007" class="madlib-card">
       <h3>Gnocchi</h3>
-      <a href="https://www.mad-words.com/007">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 8 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/008" class="madlib-card">
       <h3>My Most Embarrassing Moment</h3>
-      <a href="https://www.mad-words.com/008">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 9 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/009" class="madlib-card">
       <h3>Coming Soon!</h3>
-      <a href="https://www.mad-words.com/009">Play</a>
-    </div>
+    </a>
 
     <!-- Madlib 10 -->
-    <div class="madlib-card">
+    <a href="https://www.mad-words.com/010" class="madlib-card">
       <h3>Coming Soon!</h3>
-      <a href="https://www.mad-words.com/010">Play</a>
-    </div>
+    </a>
   </div>
 
   <!-- Footer - Now perfectly centered -->
