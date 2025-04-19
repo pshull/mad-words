@@ -6,18 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords - A Mystery Website</title>
   <style>
-    /* Load web fonts first */
-    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
-    
-    /* General Styles with font stack optimized for cross-browser consistency */
+    /* General Styles */
     body {
-      font-family: 'Comic Neue', 'Comic Sans MS', -apple-system, BlinkMacSystemFont, 
-                   'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-                   'Helvetica Neue', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      font-synthesis: none;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
       color: #2e7d32;
       margin: 0;
@@ -36,18 +27,20 @@
       text-align: center;
     }
 
-    h1 {
+    h1, h3 {
+      font-family: 'Comic Sans MS', 'Comic Neue', cursive, -apple-system, BlinkMacSystemFont, sans-serif;
       color: #388e3c;
-      font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
-      text-shadow: 2px 2px #a5d6a7;
       margin: 20px 0;
-      font-weight: 700;
-      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px #a5d6a7;
     }
 
     p {
       color: #2e7d32;
-      font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
+      font-size: 1.2rem;
       max-width: 1200px;
       line-height: 1.6;
       margin: 10px 0 20px;
@@ -62,10 +55,7 @@
       border-radius: 10px;
       font-size: 1rem;
       transition: background-color 0.3s ease, transform 0.3s ease;
-      font-family: inherit; /* Ensure button uses the same font */
-      border: none;
-      cursor: pointer;
-      display: inline-block;
+      font-family: inherit;
     }
 
     .how-to-play-button:hover {
@@ -107,18 +97,15 @@
     }
 
     .madlib-card h3 {
-      color: #388e3c;
-      font-size: clamp(1.1rem, 2vw, 1.5rem); /* Responsive font size */
+      font-size: 1.5rem;
       margin: 0 0 15px;
       text-align: center;
-      pointer-events: none;
-      font-weight: 700;
-      line-height: 1.3;
+      pointer-events: none; /* Prevents the text from blocking clicks */
     }
 
     /* Footer - Improved Centering */
     footer {
-      margin-top: auto;
+      margin-top: auto; /* Pushes footer to bottom */
       padding: 20px 0;
       width: 100%;
       display: flex;
@@ -127,10 +114,9 @@
     }
 
     footer p {
-      margin: 0;
+      margin: 0; /* Remove default paragraph margins */
       text-align: center;
       width: 100%;
-      font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive font size */
     }
 
     /* Responsive Design */
@@ -147,12 +133,21 @@
     }
 
     @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
       .madlibs-container {
         grid-template-columns: 1fr;
       }
       
-      body {
-        padding: 15px;
+      /* Ensure consistent font sizes on mobile */
+      .madlib-card h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -219,7 +214,7 @@
     </a>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer - Now perfectly centered -->
   <footer>
     <p>© 2025 MadWords - All rights reserved</p>
   </footer>
