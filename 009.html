@@ -1,1 +1,400 @@
-Coming Soon!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadWords: A Letter of Complaint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+            color: #2e7d32;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .squarespace-wrapper {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #388e3c;
+            text-shadow: 2px 2px #a5d6a7;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #81c784;
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .form-group {
+            flex: 1 1 calc(50% - 15px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-group.half-width {
+            flex: 1 1 calc(25% - 15px);
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #388e3c;
+            font-weight: bold;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 12px;
+            border: 2px solid #81c784;
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input::placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        label:hover + input::placeholder {
+            opacity: 1;
+        }
+
+        input:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        button {
+            background-color: #388e3c;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #4caf50;
+            transform: scale(1.05);
+        }
+
+        .story {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f1f8e9;
+            border: 2px solid #a5d6a7;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 1s ease;
+            text-align: left;
+        }
+
+        .story.show {
+            display: block;
+        }
+
+        .story-title {
+            font-size: 1.5rem;
+            color: #388e3c;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .story-title.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .story strong {
+            color: #388e3c;
+        }
+
+        .story span {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            font-weight: bold;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .navigation-buttons.initial-position {
+            order: 1;
+        }
+
+        .navigation-buttons.story-position {
+            order: 2;
+            margin-top: 20px;
+        }
+
+        .navigation-buttons button {
+            width: 48%;
+            margin: 0;
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #madlibs-form {
+            order: 0;
+        }
+
+        .story-title {
+            order: 1;
+        }
+
+        .story {
+            order: 2;
+        }
+
+        .navigation-buttons {
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="squarespace-wrapper">
+        <div class="container">
+            <h1>MadWords: A Letter of Complaint</h1>
+            <p>Fill in the blanks below, then read your hilarious story!</p>
+            
+            <form id="madlibs-form">
+                <div class="form-group">
+                    <label for="adjective1">Adjective:</label>
+                    <input type="text" id="adjective1" placeholder="e.g., luxurious" required>
+                </div>
+                <div class="form-group">
+                    <label for="adjective2">Adjective:</label>
+                    <input type="text" id="adjective2" placeholder="e.g., wobbly" required>
+                </div>
+                <div class="form-group">
+                    <label for="room">Room in the house:</label>
+                    <input type="text" id="room" placeholder="e.g., bathroom" required>
+                </div>
+                <div class="form-group">
+                    <label for="adjective3">Adjective:</label>
+                    <input type="text" id="adjective3" placeholder="e.g., rancid" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name of someone:</label>
+                    <input type="text" id="name" placeholder="e.g., Uncle Bob" required>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation (plural):</label>
+                    <input type="text" id="occupation" placeholder="e.g., astronauts" required>
+                </div>
+                <div class="form-group half-width">
+                    <label for="length">Unit of length:</label>
+                    <input type="text" id="length" placeholder="e.g., foot" required>
+                </div>
+                <div class="form-group half-width">
+                    <label for="animal1">Animal (plural):</label>
+                    <input type="text" id="animal1" placeholder="e.g., frogs" required>
+                </div>
+                <div class="form-group">
+                    <label for="bodypart">Body part:</label>
+                    <input type="text" id="bodypart" placeholder="e.g., toe" required>
+                </div>
+                <div class="form-group">
+                    <label for="adjective4">Adjective:</label>
+                    <input type="text" id="adjective4" placeholder="e.g., freezing" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time of day:</label>
+                    <input type="text" id="time" placeholder="e.g., midnight" required>
+                </div>
+                <div class="form-group">
+                    <label for="exclamation">Exclamation:</label>
+                    <input type="text" id="exclamation" placeholder="e.g., Holy cow!" required>
+                </div>
+                <div class="form-group">
+                    <label for="noun">Noun:</label>
+                    <input type="text" id="noun" placeholder="e.g., floor" required>
+                </div>
+                <div class="form-group">
+                    <label for="animal2">Animal:</label>
+                    <input type="text" id="animal2" placeholder="e.g., hippopotamus" required>
+                </div>
+                <div class="form-group">
+                    <label for="adjective5">Adjective:</label>
+                    <input type="text" id="adjective5" placeholder="e.g., furious" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-name">Your name:</label>
+                    <input type="text" id="customer-name" placeholder="e.g., Jane Doe" required>
+                </div>
+                <button type="submit">Generate MadWords</button>
+            </form>
+            
+            <h2 id="story-title" class="story-title">Your Complaint Letter</h2>
+            
+            <div id="story" class="story">
+                <p>Dear Hotel Owner,</p>
+                <p>Your hotel was a total false advertisement. In the online pictures, your hotel looked very big, clean, and <span id="adjective1-result"></span>. But in real life, I got into the room and there was only a bed, a <span id="adjective2-result"></span> coffee table, and a toilet in the <span id="room-result"></span>. There wasn't even a window in the whole room. Not only that, but the room was littered with trash and it smelled like <span id="adjective3-result"></span> socks that <span id="name-result"></span> threw up.</p>
+                <p>In the online description of the hotel, it said there would be free breakfast and a pool. But when I asked the hotel staff, he said that the breakfast was only for <span id="occupation-result"></span>, and when I went outside to look at the pool, all I found was a 1 <span id="length-result"></span> deep pond infested with <span id="animal1-result"></span>. I dipped my <span id="bodypart-result"></span> in and it was <span id="adjective4-result"></span> cold.</p>
+                <p>When I was ready to sleep at <span id="time-result"></span>, I lifted the covers to get in bed but to my great surprise, I found hundreds of bed bugs crawling all over the mattress. <span id="exclamation-result"></span>! Instead of sleeping on the gross bed, I used some towels as my pillows and blankets, the trash on the floor as my mattress and slept on the <span id="noun-result"></span>.</p>
+                <p>When I woke up the next morning, my back was hurting, my throat was sore, and I was hungry enough to eat a live <span id="animal2-result"></span>. I had had enough I thought, so I tried to open the door and flee, but the door wouldn't open! It was broken. I am right now locked in my room writing this message. Please help me. SOS.</p>
+                <p>From your <span id="adjective5-result"></span> customer,<br><span id="customer-name-result"></span></p>
+            </div>
+            
+            <div class="navigation-buttons initial-position">
+                <button class="home">Home</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const examples = {
+            adjective1: ["luxurious", "elegant", "fancy", "majestic", "opulent"],
+            adjective2: ["wobbly", "rickety", "broken", "ancient", "dusty"],
+            room: ["bathroom", "closet", "kitchen", "attic", "basement"],
+            adjective3: ["rancid", "putrid", "disgusting", "foul", "nauseating"],
+            name: ["Uncle Bob", "my dog", "a pirate", "a zombie", "my ex"],
+            occupation: ["astronauts", "millionaires", "royalty", "celebrities", "unicorns"],
+            length: ["foot", "inch", "meter", "hand", "fathom"],
+            animal1: ["frogs", "rats", "cockroaches", "piranhas", "leaches"],
+            bodypart: ["toe", "finger", "elbow", "nose", "knee"],
+            adjective4: ["freezing", "numbing", "bone-chilling", "arctic", "polar"],
+            time: ["midnight", "3 AM", "dusk", "the witching hour", "sunset"],
+            exclamation: ["Holy cow!", "Good grief!", "No way!", "You've got to be kidding me!", "I can't believe it!"],
+            noun: ["floor", "ceiling", "window sill", "door mat", "counter"],
+            animal2: ["hippopotamus", "elephant", "rhinoceros", "buffalo", "whale"],
+            adjective5: ["furious", "disgusted", "horrified", "traumatized", "livid"],
+            customerName: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson", "Taylor Brown"]
+        };
+
+        // Set random example placeholders
+        Object.keys(examples).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                const randomExample = examples[key][Math.floor(Math.random() * examples[key].length)];
+                element.placeholder = `e.g., ${randomExample}`;
+            }
+        });
+
+        document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get all values
+            const adjective1 = document.getElementById('adjective1').value;
+            const adjective2 = document.getElementById('adjective2').value;
+            const room = document.getElementById('room').value;
+            const adjective3 = document.getElementById('adjective3').value;
+            const name = document.getElementById('name').value;
+            const occupation = document.getElementById('occupation').value;
+            const length = document.getElementById('length').value;
+            const animal1 = document.getElementById('animal1').value;
+            const bodypart = document.getElementById('bodypart').value;
+            const adjective4 = document.getElementById('adjective4').value;
+            const time = document.getElementById('time').value;
+            const exclamation = document.getElementById('exclamation').value;
+            const noun = document.getElementById('noun').value;
+            const animal2 = document.getElementById('animal2').value;
+            const adjective5 = document.getElementById('adjective5').value;
+            const customerName = document.getElementById('customer-name').value;
+
+            // Fill in the story
+            document.getElementById('adjective1-result').textContent = adjective1;
+            document.getElementById('adjective2-result').textContent = adjective2;
+            document.getElementById('room-result').textContent = room;
+            document.getElementById('adjective3-result').textContent = adjective3;
+            document.getElementById('name-result').textContent = name;
+            document.getElementById('occupation-result').textContent = occupation;
+            document.getElementById('length-result').textContent = length;
+            document.getElementById('animal1-result').textContent = animal1;
+            document.getElementById('bodypart-result').textContent = bodypart;
+            document.getElementById('adjective4-result').textContent = adjective4;
+            document.getElementById('time-result').textContent = time;
+            document.getElementById('exclamation-result').textContent = exclamation;
+            document.getElementById('noun-result').textContent = noun;
+            document.getElementById('animal2-result').textContent = animal2;
+            document.getElementById('adjective5-result').textContent = adjective5;
+            document.getElementById('customer-name-result').textContent = customerName;
+
+            // Show the story
+            document.getElementById('story-title').classList.add('show');
+            document.getElementById('story').classList.add('show');
+
+            const navButtons = document.querySelector('.navigation-buttons');
+            navButtons.classList.remove('initial-position');
+            navButtons.classList.add('story-position');
+
+            document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+            window.location.href = 'https://www.mad-words.com';
+        });
+
+        document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+            window.location.href = 'https://www.mad-words.com/002';
+        });
+    </script>
+</body>
+</html>
