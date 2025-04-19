@@ -224,6 +224,7 @@
             <p>Fill in the blanks below, then read your hilarious story!</p>
             
             <form id="madlibs-form">
+                <!-- Row 1 -->
                 <div class="form-group">
                     <label for="adjective1">Adjective:</label>
                     <input type="text" id="adjective1" placeholder="e.g., luxurious" required>
@@ -232,30 +233,38 @@
                     <label for="adjective2">Adjective:</label>
                     <input type="text" id="adjective2" placeholder="e.g., wobbly" required>
                 </div>
+                
+                <!-- Row 2 -->
                 <div class="form-group">
-                    <label for="room">Room in the house:</label>
+                    <label for="room">Room in house:</label>
                     <input type="text" id="room" placeholder="e.g., bathroom" required>
                 </div>
                 <div class="form-group">
                     <label for="adjective3">Adjective:</label>
                     <input type="text" id="adjective3" placeholder="e.g., rancid" required>
                 </div>
+                
+                <!-- Row 3 -->
                 <div class="form-group">
-                    <label for="name">Name of someone:</label>
+                    <label for="name">Person's name:</label>
                     <input type="text" id="name" placeholder="e.g., Uncle Bob" required>
                 </div>
                 <div class="form-group">
                     <label for="occupation">Occupation (plural):</label>
                     <input type="text" id="occupation" placeholder="e.g., astronauts" required>
                 </div>
-                <div class="form-group half-width">
+                
+                <!-- Row 4 -->
+                <div class="form-group">
                     <label for="length">Unit of length:</label>
                     <input type="text" id="length" placeholder="e.g., foot" required>
                 </div>
-                <div class="form-group half-width">
+                <div class="form-group">
                     <label for="animal1">Animal (plural):</label>
                     <input type="text" id="animal1" placeholder="e.g., frogs" required>
                 </div>
+                
+                <!-- Row 5 -->
                 <div class="form-group">
                     <label for="bodypart">Body part:</label>
                     <input type="text" id="bodypart" placeholder="e.g., toe" required>
@@ -264,6 +273,8 @@
                     <label for="adjective4">Adjective:</label>
                     <input type="text" id="adjective4" placeholder="e.g., freezing" required>
                 </div>
+                
+                <!-- Row 6 -->
                 <div class="form-group">
                     <label for="time">Time of day:</label>
                     <input type="text" id="time" placeholder="e.g., midnight" required>
@@ -272,6 +283,8 @@
                     <label for="exclamation">Exclamation:</label>
                     <input type="text" id="exclamation" placeholder="e.g., Holy cow!" required>
                 </div>
+                
+                <!-- Row 7 -->
                 <div class="form-group">
                     <label for="noun">Noun:</label>
                     <input type="text" id="noun" placeholder="e.g., floor" required>
@@ -280,18 +293,21 @@
                     <label for="animal2">Animal:</label>
                     <input type="text" id="animal2" placeholder="e.g., hippopotamus" required>
                 </div>
+                
+                <!-- Row 8 -->
                 <div class="form-group">
                     <label for="adjective5">Adjective:</label>
                     <input type="text" id="adjective5" placeholder="e.g., furious" required>
                 </div>
                 <div class="form-group">
-                    <label for="customer-name">Your name:</label>
+                    <label for="customer-name">Name:</label>
                     <input type="text" id="customer-name" placeholder="e.g., Jane Doe" required>
                 </div>
+                
                 <button type="submit">Generate MadWords</button>
             </form>
             
-            <h2 id="story-title" class="story-title">Your Complaint Letter</h2>
+            <h2 id="story-title" class="story-title">A Letter of Complaint</h2>
             
             <div id="story" class="story">
                 <p>Dear Hotel Owner,</p>
@@ -393,7 +409,7 @@
         });
 
         document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
-            window.location.href = 'https://www.mad-words.com/002';
+            window.location.href = 'https://www.mad-words.com/010';
         });
     </script>
 </body>
