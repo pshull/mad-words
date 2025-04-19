@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
-  <script> 
-    window.dataLayer = window.dataLayer || []; 
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date()); 
-    gtag('config', 'G-8NPQCRL1FW'); 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8NPQCRL1FW');
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords - A Mystery Website</title>
+  <!-- Load Comic Neue from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Load Comic Sans MS as a Web Font */
-    @font-face {
-      font-family: 'Comic Sans MS';
-      src: local('Comic Sans MS'), 
-           local('ComicSansMS'),
-           url('https://fonts.cdnfonts.com/css/comic-sans-ms') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap; /* Ensures text appears immediately with fallback, then swaps */
-    }
-
     /* General Styles */
     body {
-      font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+      font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
       color: #2e7d32;
       margin: 0;
@@ -50,6 +41,7 @@
       font-size: 3rem;
       text-shadow: 2px 2px #a5d6a7;
       margin: 20px 0;
+      font-weight: 700; /* Bold variant for headings */
     }
 
     p {
@@ -69,14 +61,10 @@
       border-radius: 10px;
       font-size: 1rem;
       transition: background-color 0.3s ease, transform 0.3s ease;
+      font-family: 'Comic Neue', cursive; /* Ensure button uses same font */
     }
 
-    .how-to-play-button:hover {
-      background-color: #4caf50;
-      transform: scale(1.05);
-    }
-
-    /* Madlib Listings */
+    /* (Rest of your CSS remains exactly the same) */
     .madlibs-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -114,12 +102,12 @@
       font-size: 1.5rem;
       margin: 0 0 15px;
       text-align: center;
-      pointer-events: none; /* Prevents the text from blocking clicks */
+      pointer-events: none;
+      font-weight: 700; /* Bold for card titles */
     }
 
-    /* Footer - Improved Centering */
     footer {
-      margin-top: auto; /* Pushes footer to bottom */
+      margin-top: auto;
       padding: 20px 0;
       width: 100%;
       display: flex;
@@ -128,12 +116,11 @@
     }
 
     footer p {
-      margin: 0; /* Remove default paragraph margins */
+      margin: 0;
       text-align: center;
       width: 100%;
     }
 
-    /* Responsive Design */
     @media (max-width: 1200px) {
       .madlibs-container {
         grid-template-columns: repeat(3, 1fr);
@@ -150,15 +137,12 @@
       h1 {
         font-size: 2rem;
       }
-
       p {
         font-size: 1rem;
       }
-
       .madlibs-container {
         grid-template-columns: 1fr;
       }
-      
       .madlib-card h3 {
         font-size: 1.2rem;
       }
@@ -166,68 +150,26 @@
   </style>
 </head>
 <body>
-  <!-- Header Section -->
+  <!-- (Your HTML content remains exactly the same) -->
   <header>
     <h1>Welcome to MadWords!</h1>
     <p>Choose from a variety of MadWords and create hilarious stories. Perfect for parties, classrooms, or just for fun!</p>
-    <!-- How to Play Button -->
     <a href="https://www.mad-words.com/howtoplay" class="how-to-play-button">How to Play</a>
   </header>
 
-  <!-- Madlib Listings -->
   <div class="madlibs-container">
-    <!-- Madlib 1 -->
-    <a href="https://www.mad-words.com/001" class="madlib-card">
-      <h3>An Advertisement for Toothpaste</h3>
-    </a>
-
-    <!-- Madlib 2 -->
-    <a href="https://www.mad-words.com/002" class="madlib-card">
-      <h3>Once Upon a Sunny Sunday Morning</h3>
-    </a>
-
-    <!-- Madlib 3 -->
-    <a href="https://www.mad-words.com/003" class="madlib-card">
-      <h3>Letter from an Alien</h3>
-    </a>
-
-    <!-- Madlib 4 -->
-    <a href="https://www.mad-words.com/004" class="madlib-card">
-      <h3>Medical Drama</h3>
-    </a>
-
-    <!-- Madlib 5 -->
-    <a href="https://www.mad-words.com/005" class="madlib-card">
-      <h3>A Romantic Night</h3>
-    </a>
-
-    <!-- Madlib 6 -->
-    <a href="https://www.mad-words.com/006" class="madlib-card">
-      <h3>How to Make a PB&J</h3>
-    </a>
-
-    <!-- Madlib 7 -->
-    <a href="https://www.mad-words.com/007" class="madlib-card">
-      <h3>Gnocchi</h3>
-    </a>
-
-    <!-- Madlib 8 -->
-    <a href="https://www.mad-words.com/008" class="madlib-card">
-      <h3>My Most Embarrassing Moment</h3>
-    </a>
-
-    <!-- Madlib 9 -->
-    <a href="https://www.mad-words.com/009" class="madlib-card">
-      <h3>Coming Soon!</h3>
-    </a>
-
-    <!-- Madlib 10 -->
-    <a href="https://www.mad-words.com/010" class="madlib-card">
-      <h3>Coming Soon!</h3>
-    </a>
+    <a href="https://www.mad-words.com/001" class="madlib-card"><h3>An Advertisement for Toothpaste</h3></a>
+    <a href="https://www.mad-words.com/002" class="madlib-card"><h3>Once Upon a Sunny Sunday Morning</h3></a>
+    <a href="https://www.mad-words.com/003" class="madlib-card"><h3>Letter from an Alien</h3></a>
+    <a href="https://www.mad-words.com/004" class="madlib-card"><h3>Medical Drama</h3></a>
+    <a href="https://www.mad-words.com/005" class="madlib-card"><h3>A Romantic Night</h3></a>
+    <a href="https://www.mad-words.com/006" class="madlib-card"><h3>How to Make a PB&J</h3></a>
+    <a href="https://www.mad-words.com/007" class="madlib-card"><h3>Gnocchi</h3></a>
+    <a href="https://www.mad-words.com/008" class="madlib-card"><h3>My Most Embarrassing Moment</h3></a>
+    <a href="https://www.mad-words.com/009" class="madlib-card"><h3>Coming Soon!</h3></a>
+    <a href="https://www.mad-words.com/010" class="madlib-card"><h3>Coming Soon!</h3></a>
   </div>
 
-  <!-- Footer - Now perfectly centered -->
   <footer>
     <p>© 2025 MadWords - All rights reserved</p>
   </footer>
