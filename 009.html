@@ -301,7 +301,7 @@
                 </div>
                 <div class="form-group">
                     <label for="customer-name">Name:</label>
-                    <input type="text" id="customer-name" placeholder="e.g., Jane Doe" required>
+                    <input type="text" id="name2" placeholder="e.g., Jane Doe" required>
                 </div>
                 
                 <button type="submit">Generate MadWords</button>
@@ -315,7 +315,7 @@
                 <p>In the online description of the hotel, it said there would be free breakfast and a pool. But when I asked the hotel staff, he said that the breakfast was only for <span id="occupation-result"></span>, and when I went outside to look at the pool, all I found was a 1 <span id="length-result"></span> deep pond infested with <span id="animal1-result"></span>. I dipped my <span id="bodypart-result"></span> in and it was <span id="adjective4-result"></span> cold.</p>
                 <p>When I was ready to sleep at <span id="time-result"></span>, I lifted the covers to get in bed but to my great surprise, I found hundreds of bed bugs crawling all over the mattress. <span id="exclamation-result"></span>! Instead of sleeping on the gross bed, I used some towels as my pillows and blankets, the trash on the floor as my mattress and slept on the <span id="noun-result"></span>.</p>
                 <p>When I woke up the next morning, my back was hurting, my throat was sore, and I was hungry enough to eat a live <span id="animal2-result"></span>. I had had enough I thought, so I tried to open the door and flee, but the door wouldn't open! It was broken. I am right now locked in my room writing this message. Please help me. SOS.</p>
-                <p>From your <span id="adjective5-result"></span> customer,<br><span id="customer-name-result"></span></p>
+                <p>From your <span id="adjective5-result"></span> customer,<br><span id="name2-result"></span></p>
             </div>
             
             <div class="navigation-buttons initial-position">
@@ -327,22 +327,22 @@
 
     <script>
         const examples = {
-            adjective1: ["luxurious", "elegant", "fancy", "majestic", "opulent"],
-            adjective2: ["wobbly", "rickety", "broken", "ancient", "dusty"],
+            adjective1: ["white", "stunning", "bright", "charming", "correct"],
+            adjective2: ["afraid", "big", "dead", "fake", "true"],
             room: ["bathroom", "closet", "kitchen", "attic", "basement"],
-            adjective3: ["rancid", "putrid", "disgusting", "foul", "nauseating"],
-            name: ["Uncle Bob", "my dog", "a pirate", "a zombie", "my ex"],
-            occupation: ["astronauts", "millionaires", "royalty", "celebrities", "unicorns"],
-            length: ["foot", "inch", "meter", "hand", "fathom"],
-            animal1: ["frogs", "rats", "cockroaches", "piranhas", "leaches"],
-            bodypart: ["toe", "finger", "elbow", "nose", "knee"],
-            adjective4: ["freezing", "numbing", "bone-chilling", "arctic", "polar"],
-            time: ["midnight", "3 AM", "dusk", "the witching hour", "sunset"],
-            exclamation: ["Holy cow!", "Good grief!", "No way!", "You've got to be kidding me!", "I can't believe it!"],
-            noun: ["floor", "ceiling", "window sill", "door mat", "counter"],
-            animal2: ["hippopotamus", "elephant", "rhinoceros", "buffalo", "whale"],
-            adjective5: ["furious", "disgusted", "horrified", "traumatized", "livid"],
-            customerName: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson", "Taylor Brown"]
+            adjective3: ["far", "late", "tall", "young", "busy"],
+            name: ["Alex", "Jamie", "Taylor", "Casey", "Jack"],
+            occupation: ["chef", "poet", "teacher", "gardener"],
+            length:  ["10 feet", "20 inches", "500 kilometers", "1 centimeter"],
+            animal1:  ["cat", "trout", "tiger", "bird", "panda"],
+            bodypart:  ["ankle", "wrist", "hip", "neck", "arm"],
+            adjective4: ["cold", "sure", "soft", "old", "tired"],
+            time: ["1:00 AM", "3:30 PM", "9:00 PM", "10:00 AM"],
+            exclamation: ["unbelievable!", "ridiculous!", "crazy!", "insane!"],
+            noun: ["pen", "place", "week", "river", "car"],
+            animal2: ["dog", "mouse", "whale", "eagle", "lion"],
+            adjective5: ["steaming", "weird", "bumpy", "black", "boxy"],
+            name2: ["Jane", "John", "Alex", "Sam", "Taylor"]
         };
 
         // Set random example placeholders
