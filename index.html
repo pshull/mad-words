@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+<!-- HTML document declaration with English language setting -->
 <html lang="en">
 <head>
+  <!-- Favicon for browser tab -->
   <link rel="icon" href="favicon.png" type="image/png"> 
-  <!-- Google tag (gtag.js) -->
+  
+  <!-- Google Analytics tracking code -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,13 +13,18 @@
     gtag('js', new Date());
     gtag('config', 'G-8NPQCRL1FW');
   </script>
+
+  <!-- Document metadata and responsive viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords - A Mystery Website</title>
-  <!-- Load Comic Neue from Google Fonts -->
+  
+  <!-- Google Fonts import for Comic Neue -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS styles -->
   <style>
-    /* General Styles */
+    /* Base body styling with gradient background and layout */
     body {
       font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -29,7 +37,7 @@
       min-height: 100vh;
     }
 
-    /* Header Section */
+    /* Header section styling */
     header {
       width: 100%;
       max-width: 1200px;
@@ -37,14 +45,16 @@
       text-align: center;
     }
 
+    /* Main heading style */
     h1 {
       color: #388e3c;
       font-size: 3rem;
       text-shadow: 2px 2px #a5d6a7;
       margin: 20px 0;
-      font-weight: 700; /* Bold variant for headings */
+      font-weight: 700;
     }
 
+    /* Paragraph styling */
     p {
       color: #2e7d32;
       font-size: 1.2rem;
@@ -53,7 +63,7 @@
       margin: 10px 0 20px;
     }
 
-    /* How to Play Button */
+    /* How to Play button styling */
     .how-to-play-button {
       text-decoration: none;
       padding: 10px 20px;
@@ -62,10 +72,10 @@
       border-radius: 10px;
       font-size: 1rem;
       transition: background-color 0.3s ease, transform 0.3s ease;
-      font-family: 'Comic Neue', cursive; /* Ensure button uses same font */
+      font-family: 'Comic Neue', cursive;
     }
 
-    /* (Rest of your CSS remains exactly the same) */
+    /* MadLibs card container grid layout */
     .madlibs-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -75,6 +85,7 @@
       margin: 30px 0;
     }
 
+    /* Individual MadLib card styling */
     .madlib-card {
       background-color: rgba(255, 255, 255, 0.9);
       padding: 20px;
@@ -92,21 +103,24 @@
       color: inherit;
     }
 
+    /* MadLib card hover effects */
     .madlib-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
       background-color: rgba(255, 255, 255, 1);
     }
 
+    /* MadLib card title styling */
     .madlib-card h3 {
       color: #388e3c;
       font-size: 1.5rem;
       margin: 0 0 15px;
       text-align: center;
       pointer-events: none;
-      font-weight: 700; /* Bold for card titles */
+      font-weight: 700;
     }
 
+    /* Footer styling */
     footer {
       margin-top: auto;
       padding: 20px 0;
@@ -116,24 +130,28 @@
       align-items: center;
     }
 
+    /* Footer paragraph styling */
     footer p {
       margin: 0;
       text-align: center;
       width: 100%;
     }
 
+    /* Responsive design for medium screens */
     @media (max-width: 1200px) {
       .madlibs-container {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
+    /* Responsive design for small screens */
     @media (max-width: 800px) {
       .madlibs-container {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
+    /* Responsive design for mobile devices */
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -150,15 +168,19 @@
     }
   </style>
 </head>
+
+<!-- Main page content -->
 <body>
-  <!-- (Your HTML content remains exactly the same) -->
+  <!-- Page header section -->
   <header>
     <h1>Welcome to MadWords!</h1>
     <p>Choose from a variety of MadWords and create hilarious stories. Perfect for parties, classrooms, or just for fun!</p>
     <a href="https://www.mad-words.com/howtoplay" class="how-to-play-button">How to Play</a>
   </header>
 
+  <!-- MadLibs card grid container -->
   <div class="madlibs-container">
+    <!-- Individual MadLib cards -->
     <a href="https://www.mad-words.com/001" class="madlib-card"><h3>An Advertisement for Toothpaste</h3></a>
     <a href="https://www.mad-words.com/002" class="madlib-card"><h3>Once Upon a Sunny Sunday Morning</h3></a>
     <a href="https://www.mad-words.com/003" class="madlib-card"><h3>Letter from an Alien</h3></a>
@@ -173,6 +195,7 @@
     <a href="https://www.mad-words.com/012" class="madlib-card"><h3> </h3></a>
   </div>
 
+  <!-- Page footer -->
   <footer>
     <p>© 2025 MadWords - All rights reserved</p>
   </footer>
