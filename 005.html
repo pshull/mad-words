@@ -1,13 +1,31 @@
+<!-- MadWords: A Romantic Night -->
 <!DOCTYPE html>
+<!-- HTML document declaration with English language setting -->
 <html lang="en">
 <head>
- <link rel="icon" href="favicon.png" type="image/png"> 
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
+  <!-- Favicon for browser tab -->
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  
+  <!-- Google Analytics tracking code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8NPQCRL1FW');
+  </script>
+
+  <!-- Document metadata and responsive viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords: A Romantic Night</title>
+  
+  <!-- Google Fonts import for Comic Neue -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS styles -->
   <style>
+    /* Base body styling with gradient background and centering */
     body {
       font-family: 'Comic Neue', cursive;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -21,6 +39,7 @@
       align-items: center;
     }
 
+    /* Main content wrapper styling */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -29,6 +48,7 @@
       position: relative;
     }
 
+    /* Primary heading style */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -36,6 +56,7 @@
       margin-bottom: 20px;
     }
 
+    /* Content container styling */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -48,12 +69,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Form layout styling */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -61,6 +84,7 @@
       order: 0;
     }
 
+    /* Form group styling for input fields */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -68,6 +92,7 @@
       align-items: flex-start;
     }
 
+    /* Label styling for form inputs */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -76,6 +101,7 @@
       cursor: pointer;
     }
 
+    /* Input field styling */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -86,20 +112,24 @@
       transition: border-color 0.3s ease;
     }
 
+    /* Placeholder text styling */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
+    /* Show placeholder on label hover */
     label:hover + input::placeholder {
       opacity: 1;
     }
 
+    /* Input focus state */
     input:focus {
       border-color: #4caf50;
       outline: none;
     }
 
+    /* Button styling */
     button {
       background-color: #388e3c;
       color: white;
@@ -113,11 +143,13 @@
       width: 100%;
     }
 
+    /* Button hover effects */
     button:hover {
       background-color: #4caf50;
       transform: scale(1.05);
     }
 
+    /* Generated story container styling */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -132,10 +164,12 @@
       order: 2;
     }
 
+    /* Show story class */
     .story.show {
       display: block;
     }
 
+    /* Story title styling */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -146,15 +180,18 @@
       order: 1;
     }
 
+    /* Show story title class */
     .story-title.show {
       display: block;
     }
 
+    /* Fade-in animation for story */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Styling for filled-in words in story */
     .story span {
       text-decoration: underline;
       text-decoration-skip-ink: none;
@@ -162,6 +199,7 @@
       color: #388e3c;
     }
 
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -169,15 +207,18 @@
       order: 3;
     }
 
+    /* Initial position for nav buttons */
     .navigation-buttons.initial-position {
       order: 1;
     }
 
+    /* Story position for nav buttons */
     .navigation-buttons.story-position {
       order: 3;
       margin-top: 20px;
     }
 
+    /* Navigation button styling */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -191,18 +232,27 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
+    /* Navigation button hover effects */
     .navigation-buttons button:hover {
       background-color: #388e3c;
       transform: scale(1.05);
     }
   </style>
 </head>
+
+<!-- Main page content -->
 <body>
+  <!-- Page wrapper -->
   <div class="squarespace-wrapper">
+    <!-- Content container -->
     <div class="container">
+      <!-- Main heading -->
       <h1>MadWords: A Romantic Night</h1>
       <p>Fill in the blanks below, then read your hilarious story!</p>
+      
+      <!-- MadLibs form -->
       <form id="madlibs-form">
+        <!-- Form input groups -->
         <div class="form-group">
           <label for="adjective1">Adjective:</label>
           <input type="text" id="adjective1" placeholder="e.g., cozy" required>
@@ -265,7 +315,11 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
+      
+      <!-- Story title (hidden initially) -->
       <h2 id="story-title" class="story-title">A Romantic Night</h2>
+      
+      <!-- Generated story (hidden initially) -->
       <div id="story" class="story">
         <p>
           James: Hey Lily, we should go out for dinner tonight, just you and me.<br>
@@ -292,6 +346,8 @@
           Lily: Let's dig in.
         </p>
       </div>
+      
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -299,7 +355,9 @@
     </div>
   </div>
 
+  <!-- JavaScript functionality -->
   <script>
+    // Example words for placeholders
     const examples = {
       adjective1: ["cozy", "romantic", "charming", "elegant"],
       adjective2: ["afraid", "big", "dead", "fake", "true"],
@@ -318,6 +376,7 @@
       bodyPart: ["ankle", "wrist", "hip", "neck", "arm"]
     };
 
+    // Set random example placeholders
     for (const key in examples) {
       const input = document.getElementById(key);
       if (input) {
@@ -325,9 +384,11 @@
       }
     }
 
+    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Get all input values
       const adjective1 = document.getElementById('adjective1').value;
       const adjective2 = document.getElementById('adjective2').value;
       const time = document.getElementById('time').value;
@@ -344,6 +405,7 @@
       const pluralNoun = document.getElementById('plural-noun').value;
       const bodyPart = document.getElementById('body-part').value;
 
+      // Fill in the story with user inputs
       document.getElementById('adjective1-result').textContent = adjective1;
       document.getElementById('adjective2-result').textContent = adjective2;
       document.getElementById('time-result').textContent = time;
@@ -361,20 +423,25 @@
       document.getElementById('body-part-result').textContent = bodyPart;
       document.getElementById('food1-result2').textContent = food1;
 
+      // Show the story and title
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
+      // Update navigation buttons position
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
+      // Scroll to the story title
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Home button click handler
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
+    // Next button click handler
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/006';
     });
