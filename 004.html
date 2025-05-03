@@ -1,7 +1,11 @@
+  <!-- MadWords: Medical Drama -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Favicon for the website -->
   <link rel="icon" href="favicon.png" type="image/png"> 
+  
+  <!-- Google Analytics tracking code -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
   <script> 
     window.dataLayer = window.dataLayer || []; 
@@ -9,12 +13,20 @@
     gtag('js', new Date()); 
     gtag('config', 'G-8NPQCRL1FW'); 
   </script>
+  
+  <!-- Basic meta tags for character set and responsive viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Page title -->
   <title>MadWords: Medical Drama</title>
+  
+  <!-- Main CSS styles -->
   <style>
+    /* Import Google Font - Comic Neue */
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
     
+    /* Body styling with gradient background and centered content */
     body {
       font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -28,6 +40,7 @@
       align-items: center;
     }
 
+    /* Wrapper for content with max-width */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -36,6 +49,7 @@
       position: relative;
     }
 
+    /* Main heading style */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -43,6 +57,7 @@
       margin-bottom: 20px;
     }
 
+    /* Main container styling */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -55,12 +70,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Form layout */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -68,6 +85,7 @@
       order: 0;
     }
 
+    /* Form group styling (each input field container) */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -75,6 +93,7 @@
       align-items: flex-start;
     }
 
+    /* Label styling */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -83,6 +102,7 @@
       cursor: pointer;
     }
 
+    /* Input field styling */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -94,6 +114,7 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Placeholder animation effects */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -108,6 +129,7 @@
       outline: none;
     }
 
+    /* Button styling */
     button {
       background-color: #388e3c;
       color: white;
@@ -127,6 +149,7 @@
       transform: scale(1.05);
     }
 
+    /* Story container styling (initially hidden) */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -145,6 +168,7 @@
       display: block;
     }
 
+    /* Story title styling */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -159,11 +183,13 @@
       display: block;
     }
 
+    /* Fade-in animation for story */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Special text styling in story */
     .story strong {
       color: #388e3c;
     }
@@ -175,6 +201,7 @@
       color: #388e3c;
     }
 
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -182,6 +209,7 @@
       order: 3;
     }
 
+    /* Navigation buttons positioning classes */
     .navigation-buttons.initial-position {
       order: 1;
     }
@@ -191,6 +219,7 @@
       margin-top: 20px;
     }
 
+    /* Navigation buttons styling */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -211,10 +240,14 @@
   </style>
 </head>
 <body>
+  <!-- Main content wrapper -->
   <div class="squarespace-wrapper">
     <div class="container">
+      <!-- Page heading and description -->
       <h1>MadWords: Medical Drama</h1>
       <p>Fill in the blanks below, then read your hilarious story!</p>
+      
+      <!-- MadLibs form with input fields -->
       <form id="madlibs-form">
         <div class="form-group">
           <label for="height">Length:</label>
@@ -270,7 +303,11 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
+      
+      <!-- Story title (initially hidden) -->
       <h2 id="story-title" class="story-title">Medical Drama</h2>
+      
+      <!-- Story container (initially hidden) -->
       <div id="story" class="story">
         <p><strong>Nurse:</strong> Doctor! Doctor! Come quickly! A patient just fell off a <span id="height-result"></span> high diving board and landed <span id="bodyPart1-result"></span> first on the ground.</p>
         <p><strong>Doctor:</strong> Oh, my! We better do <span id="typeOfSurgery1-result"></span>.</p>
@@ -286,6 +323,8 @@
         <p><strong>Patient:</strong> April fools!</p>
         <p><strong>Doctor:</strong> Are you kidding me! That's just <span id="exclamation-result"></span>!</p>
       </div>
+      
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -293,7 +332,9 @@
     </div>
   </div>
 
+  <!-- JavaScript for the MadLibs functionality -->
   <script>
+    // Example words for placeholder text
     const examples = {
       height: ["10 feet", "20 inches", "500 kilometers", "1 centimeter"],
       bodyPart1: ["head", "elbow", "knee", "shoulder", "foot"],
@@ -310,6 +351,7 @@
       exclamation: ["unbelievable!", "ridiculous!", "crazy!", "insane!"]
     };
 
+    // Set random example placeholders for each input field
     document.getElementById('height').placeholder = `e.g., ${examples.height[Math.floor(Math.random() * examples.height.length)]}`;
     document.getElementById('bodyPart1').placeholder = `e.g., ${examples.bodyPart1[Math.floor(Math.random() * examples.bodyPart1.length)]}`;
     document.getElementById('typeOfSurgery1').placeholder = `e.g., ${examples.typeOfSurgery1[Math.floor(Math.random() * examples.typeOfSurgery1.length)]}`;
@@ -324,9 +366,11 @@
     document.getElementById('pluralNoun').placeholder = `e.g., ${examples.pluralNoun[Math.floor(Math.random() * examples.pluralNoun.length)]}`;
     document.getElementById('exclamation').placeholder = `e.g., ${examples.exclamation[Math.floor(Math.random() * examples.exclamation.length)]}`;
 
+    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Get all input values
       const height = document.getElementById('height').value;
       const bodyPart1 = document.getElementById('bodyPart1').value;
       const typeOfSurgery1 = document.getElementById('typeOfSurgery1').value;
@@ -341,6 +385,7 @@
       const pluralNoun = document.getElementById('pluralNoun').value;
       const exclamation = document.getElementById('exclamation').value;
 
+      // Insert values into the story
       document.getElementById('height-result').textContent = height;
       document.getElementById('bodyPart1-result').textContent = bodyPart1;
       document.getElementById('typeOfSurgery1-result').textContent = typeOfSurgery1;
@@ -355,20 +400,25 @@
       document.getElementById('pluralNoun-result').textContent = pluralNoun;
       document.getElementById('exclamation-result').textContent = exclamation;
 
+      // Show the story and title
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
+      // Move navigation buttons below story
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
+      // Scroll to the story
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Home button click handler
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
+    // Next button click handler
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/005';
     });
