@@ -1,6 +1,8 @@
+<!-- MadWords: How to Make a PB&J -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Favicon and Google Analytics tracking code -->
   <link rel="icon" href="favicon.png" type="image/png"> 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
   <script> 
@@ -9,12 +11,17 @@
     gtag('js', new Date()); 
     gtag('config', 'G-8NPQCRL1FW'); 
   </script>
+  
+  <!-- Meta tags for character set and responsive viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords: How to Make a PB&J</title>
+  
+  <!-- CSS styles for the page -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
     
+    /* Main body styling */
     body {
       font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -28,6 +35,7 @@
       align-items: center;
     }
 
+    /* Wrapper for content */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -36,6 +44,7 @@
       position: relative;
     }
 
+    /* Main heading style */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -43,6 +52,7 @@
       margin-bottom: 20px;
     }
 
+    /* Main container styling */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -55,12 +65,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Form layout */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -68,6 +80,7 @@
       order: 0;
     }
 
+    /* Form group styling */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -75,6 +88,7 @@
       align-items: flex-start;
     }
 
+    /* Label styling */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -83,6 +97,7 @@
       cursor: pointer;
     }
 
+    /* Input field styling */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -94,6 +109,7 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Placeholder animation */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -108,6 +124,7 @@
       outline: none;
     }
 
+    /* Button styling */
     button {
       background-color: #388e3c;
       color: white;
@@ -127,6 +144,7 @@
       transform: scale(1.05);
     }
 
+    /* Story display styling */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -145,6 +163,7 @@
       display: block;
     }
 
+    /* Story title styling */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -159,11 +178,13 @@
       display: block;
     }
 
+    /* Animation for story fade-in */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Styling for the filled-in words in the story */
     .story span {
       text-decoration: underline;
       text-decoration-skip-ink: none;
@@ -171,6 +192,7 @@
       color: #388e3c;
     }
 
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -187,6 +209,7 @@
       margin-top: 20px;
     }
 
+    /* Navigation buttons styling */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -207,10 +230,14 @@
   </style>
 </head>
 <body>
+  <!-- Main content container -->
   <div class="squarespace-wrapper">
     <div class="container">
+      <!-- Page title -->
       <h1>MadWords: How to Make a PB&J</h1>
       <p>Fill in the blanks below, then read your hilarious story!</p>
+      
+      <!-- MadLibs form with input fields -->
       <form id="madlibs-form">
         <div class="form-group">
           <label for="food">Type of Food:</label>
@@ -266,6 +293,8 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
+      
+      <!-- Story title and content (initially hidden) -->
       <h2 id="story-title" class="story-title">How to Make a PB&J Sandwich</h2>
       <div id="story" class="story">
         <p>These are instructions for how to make a peanut butter and jelly sandwich. First, you go to a <span id="food-result"></span> farm and gather some wheat, grind it up and mix it with <span id="liquid-result"></span>, then put it in the <span id="appliance1-result"></span>. Now you have a loaf of bread, cut <span id="number1-result"></span> slices off.</p>
@@ -273,6 +302,8 @@
         <p>Wait until the sugar is <span id="verb3-result"></span>, then add lemon zest and strawberries. After 20 <span id="timeUnit-result"></span>, pour the jam into a jar and let it cool in the fridge for <span id="number2-result"></span> hours. Then, take the jam out of the <span id="appliance2-result"></span> and spread it on to the other slice of bread.</p>
         <p>Now, put the peanut butter bread slice and the jam bread slice together. And there you have your very own peanut butter and jelly sandwich. <span id="exclamation-result"></span>!</p>
       </div>
+      
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -280,7 +311,9 @@
     </div>
   </div>
 
+  <!-- JavaScript functionality -->
   <script>
+    // Example words for placeholders
     const examples = {
       food: ["pizza", "salad", "noodles", "celery", "bread"],
       liquid: ["oil", "juice", "salt water", "red dye"],
@@ -297,6 +330,7 @@
       exclamation: ["unbelievable!", "ridiculous!", "crazy!", "insane!"],
     };
 
+    // Set random example placeholders
     for (const key in examples) {
       const input = document.getElementById(key);
       if (input) {
@@ -304,9 +338,11 @@
       }
     }
 
+    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Get all input values
       const food = document.getElementById('food').value;
       const liquid = document.getElementById('liquid').value;
       const appliance1 = document.getElementById('appliance1').value;
@@ -321,6 +357,7 @@
       const appliance2 = document.getElementById('appliance2').value;
       const exclamation = document.getElementById('exclamation').value;
 
+      // Update story with user inputs
       document.getElementById('food-result').textContent = food;
       document.getElementById('liquid-result').textContent = liquid;
       document.getElementById('appliance1-result').textContent = appliance1;
@@ -335,16 +372,20 @@
       document.getElementById('appliance2-result').textContent = appliance2;
       document.getElementById('exclamation-result').textContent = exclamation;
 
+      // Show the story and title
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
+      // Reposition navigation buttons
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
+      // Scroll to the story
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Navigation button event handlers
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
