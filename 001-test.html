@@ -44,17 +44,17 @@
       .squarespace-wrapper {
           max-width: 800px;
           width: 100%;
-          margin: 0 auto;
+          margin: auto;
           padding: 20px;
           position: relative;
       }
 
       /* Main heading style */
       h1 {
-          font-size: 3rem;
+          font-size: 2.2rem;
           color: #388e3c;
           text-shadow: 2px 2px #a5d6a7;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
       }
 
       /* Main container styling */
@@ -62,7 +62,7 @@
           background-color: rgba(255, 255, 255, 0.9);
           border: 2px solid #81c784;
           border-radius: 20px;
-          padding: 30px;
+          padding: 20px;
           width: 100%;
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           backdrop-filter: blur(10px);
@@ -70,34 +70,29 @@
 
       /* Paragraph styling */
       p {
-          font-size: 1.2rem;
-          margin-bottom: 20px;
+          font-size: 1rem;
+          margin-bottom: 15px;
           color: #2e7d32;
       }
 
       /* Form layout */
       form {
           display: flex;
-          flex-wrap: wrap;
-          gap: 15px;
+          flex-direction: column;
+          gap: 10px;
       }
 
       /* Form group styling */
       .form-group {
-          flex: 1 1 calc(50% - 15px);
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-      }
-
-      /* Half-width form groups */
-      .form-group.half-width {
-          flex: 1 1 calc(25% - 15px);
+          width: 100%;
       }
 
       /* Label styling */
       label {
-          font-size: 1.1rem;
+          font-size: 1rem;
           color: #388e3c;
           font-weight: bold;
           margin-bottom: 5px;
@@ -106,7 +101,7 @@
 
       /* Input field styling */
       input {
-          padding: 12px;
+          padding: 10px;
           border: 2px solid #81c784;
           border-radius: 10px;
           font-size: 1rem;
@@ -137,10 +132,10 @@
           padding: 12px 24px;
           border: none;
           border-radius: 10px;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           cursor: pointer;
           transition: background-color 0.3s ease, transform 0.3s ease;
-          margin-top: 20px;
+          margin-top: 15px;
           width: 100%;
       }
 
@@ -151,10 +146,10 @@
 
       /* Story container styling (initially hidden) */
       .story {
-          font-size: 1.2rem;
-          line-height: 1.6;
-          margin-top: 20px;
-          padding: 20px;
+          font-size: 1rem;
+          line-height: 1.5;
+          margin-top: 15px;
+          padding: 15px;
           background-color: #f1f8e9;
           border: 2px solid #a5d6a7;
           border-radius: 10px;
@@ -169,7 +164,7 @@
 
       /* Story title styling */
       .story-title {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           color: #388e3c;
           font-weight: bold;
           margin-bottom: 10px;
@@ -202,7 +197,8 @@
       .navigation-buttons {
           display: flex;
           justify-content: space-between;
-          margin-top: 20px;
+          margin-top: 15px;
+          gap: 10px;
       }
 
       .navigation-buttons.initial-position {
@@ -211,19 +207,19 @@
 
       .navigation-buttons.story-position {
           order: 2;
-          margin-top: 20px;
+          margin-top: 15px;
       }
 
       /* Navigation buttons styling */
       .navigation-buttons button {
-          width: 48%;
+          width: 100%;
           margin: 0;
           background-color: #4caf50;
           color: white;
-          padding: 12px 24px;
+          padding: 10px;
           border: none;
           border-radius: 10px;
-          font-size: 1.2rem;
+          font-size: 1rem;
           cursor: pointer;
           transition: background-color 0.3s ease, transform 0.3s ease;
       }
@@ -257,6 +253,40 @@
       /* Navigation buttons order in container */
       .navigation-buttons {
           order: 3;
+      }
+
+      /* Mobile-specific adjustments */
+      @media (max-width: 480px) {
+          body {
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 100vh;
+          }
+          
+          .squarespace-wrapper {
+              padding: 10px;
+              width: 95%;
+          }
+          
+          h1 {
+              font-size: 1.8rem;
+              margin-bottom: 10px;
+          }
+          
+          .container {
+              padding: 15px;
+          }
+          
+          button {
+              padding: 10px;
+              font-size: 1rem;
+          }
+          
+          .form-group {
+              margin-bottom: 8px;
+          }
       }
   </style>
 </head>
@@ -294,7 +324,7 @@
                     <label for="website">Website Name:</label>
                     <input type="text" id="website" placeholder="e.g., dragonsrule.com" required>
                 </div>
-                <div class="form-group half-width">
+                <div class="form-group">
                     <label for="number2">Number:</label>
                     <input type="text" id="number2" placeholder="e.g., 99" required>
                 </div>
