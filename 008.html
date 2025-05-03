@@ -1,14 +1,21 @@
+<!-- MadWords: My Most Embarrassing Moment -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Favicon link -->
   <link rel="icon" href="favicon.png" type="image/png"> 
+  <!-- Google Analytics tracking code -->
   <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
+  <!-- Character encoding and viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
   <title>MadWords: My Most Embarrassing Moment</title>
+  <!-- Google Fonts import -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- CSS styles -->
   <style>
-    /* General Styles */
+    /* General body styles */
     body {
       font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -22,6 +29,7 @@
       align-items: center;
     }
 
+    /* Main content wrapper */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -30,6 +38,7 @@
       position: relative;
     }
 
+    /* Main heading style */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -37,6 +46,7 @@
       margin-bottom: 20px;
     }
 
+    /* Container for form and story */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -49,13 +59,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styles */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
-    /* Form Styles */
+    /* Form layout styles */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -63,6 +74,7 @@
       order: 0;
     }
 
+    /* Form group styles */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -70,6 +82,7 @@
       align-items: flex-start;
     }
 
+    /* Label styles */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -78,6 +91,7 @@
       cursor: pointer;
     }
 
+    /* Input field styles */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -89,20 +103,24 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Placeholder styles */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
+    /* Placeholder hover effect */
     label:hover + input::placeholder {
       opacity: 1;
     }
 
+    /* Input focus state */
     input:focus {
       border-color: #4caf50;
       outline: none;
     }
 
+    /* Button styles */
     button {
       background-color: #388e3c;
       color: white;
@@ -117,12 +135,13 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Button hover effect */
     button:hover {
       background-color: #4caf50;
       transform: scale(1.05);
     }
 
-    /* Story Styles */
+    /* Story container styles */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -137,10 +156,12 @@
       order: 2;
     }
 
+    /* Show story class */
     .story.show {
       display: block;
     }
 
+    /* Story title styles */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -151,15 +172,18 @@
       order: 1;
     }
 
+    /* Show story title class */
     .story-title.show {
       display: block;
     }
 
+    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Span styles within story */
     .story span {
       text-decoration: underline;
       text-decoration-skip-ink: none;
@@ -167,7 +191,7 @@
       color: #388e3c;
     }
 
-    /* Navigation Buttons */
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -175,15 +199,18 @@
       order: 3;
     }
 
+    /* Initial position for nav buttons */
     .navigation-buttons.initial-position {
       order: 1;
     }
 
+    /* Story position for nav buttons */
     .navigation-buttons.story-position {
       order: 3;
       margin-top: 20px;
     }
 
+    /* Navigation button styles */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -197,6 +224,7 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
+    /* Navigation button hover effect */
     .navigation-buttons button:hover {
       background-color: #388e3c;
       transform: scale(1.05);
@@ -204,11 +232,17 @@
   </style>
 </head>
 <body>
+  <!-- Main content wrapper -->
   <div class="squarespace-wrapper">
+    <!-- Container for all content -->
     <div class="container">
+      <!-- Main heading -->
       <h1>MadWords: My Most Embarrassing Moment</h1>
+      <!-- Instructions paragraph -->
       <p>Fill in the blanks below to create your embarrassing story!</p>
+      <!-- MadLibs form -->
       <form id="madlibs-form">
+        <!-- Form input groups -->
         <div class="form-group">
           <label for="name">Your Name:</label>
           <input type="text" id="name" placeholder="e.g., Alex" required>
@@ -245,17 +279,19 @@
           <label for="adjective3">Adjective:</label>
           <input type="text" id="adjective3" placeholder="e.g., brave" required>
         </div>
+        <!-- Submit button -->
         <button type="submit">Generate MadWords</button>
       </form>
-      <!-- Story Title -->
+      <!-- Story Title (hidden by default) -->
       <h2 id="story-title" class="story-title">My Most Embarrassing Moment</h2>
-      <!-- Story -->
+      <!-- Story container (hidden by default) -->
       <div id="story" class="story">
+        <!-- Story paragraphs with placeholders -->
         <p>My most embarrassing moment, written by <span id="name-result"></span>. My most embarrassing moment happened when I was on my bike riding to <span id="place-result"></span>. It was my first time riding my bike without training wheels. I was a little <span id="adjective1-result"></span> at first, but after a while I got the hang of it. The <span id="noun-result"></span> blew past me, and it felt pretty <span id="adjective2-result"></span> to be able to ride my bike.</p>
         <p>But then I saw a really beautiful black and gold <span id="animal-result"></span> land on my hand. It was so beautiful that I couldn't take my eyes off it. Then <span id="exclamation-result"></span>! I crashed into a businessman who was holding a bunch of papers. All his papers fell to the ground, and he was so angry he yelled "<span id="insult-result"></span>!" at me.</p>
         <p>My bike also fell on him, and I wasn't even <span id="adjective3-result"></span> enough to pick it up so I just stood there waiting for him to stop yelling and push the bike off. I sure don't want that to happen ever again!</p>
       </div>
-      <!-- Navigation Buttons -->
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -263,8 +299,9 @@
     </div>
   </div>
 
+  <!-- JavaScript code -->
   <script>
-    // Random examples for placeholders
+    // Random examples for form placeholders
     const examples = {
       name: ["Alex", "Jamie", "Taylor", "Casey"],
       place: ["home", "Canada", "the ocean", "the beach"],
@@ -277,7 +314,7 @@
       adjective3: ["far", "late", "tall", "young", "busy"]
     };
 
-    // Set random placeholders
+    // Set random placeholders for form inputs
     for (const key in examples) {
       const input = document.getElementById(key);
       if (input) {
@@ -289,7 +326,7 @@
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Get input values
+      // Get all input values from the form
       const name = document.getElementById('name').value;
       const place = document.getElementById('place').value;
       const adjective1 = document.getElementById('adjective1').value;
@@ -300,7 +337,7 @@
       const insult = document.getElementById('insult').value;
       const adjective3 = document.getElementById('adjective3').value;
 
-      // Insert values into the story
+      // Insert values into the story placeholders
       document.getElementById('name-result').textContent = name;
       document.getElementById('place-result').textContent = place;
       document.getElementById('adjective1-result').textContent = adjective1;
@@ -311,25 +348,25 @@
       document.getElementById('insult-result').textContent = insult;
       document.getElementById('adjective3-result').textContent = adjective3;
 
-      // Show the story title and story
+      // Show the story title and story container
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
-      // Move navigation buttons below the story
+      // Reposition navigation buttons below the story
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
-      // Scroll down to the story section
+      // Scroll to show the generated story
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Home button functionality
+    // Home button click handler
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
-    // Next button functionality
+    // Next button click handler
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/009';
     });
