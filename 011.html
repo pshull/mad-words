@@ -1,0 +1,386 @@
+<!-- MadWords: Championship Basketball Game -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Favicon for the website -->
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  <!-- Google Analytics tracking script -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date()); 
+    gtag('config', 'G-8NPQCRL1FW'); 
+  </script>
+  <!-- Character encoding and responsive viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>MadWords: Championship Basketball Game</title>
+  <!-- Importing Google Font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    
+    /* Main body styling */
+    body {
+      font-family: 'Comic Neue', cursive, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+      color: #2e7d32;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Main content wrapper styling */
+    .squarespace-wrapper {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Main heading style */
+    h1 {
+      font-size: 3rem;
+      color: #388e3c;
+      text-shadow: 2px 2px #a5d6a7;
+      margin-bottom: 20px;
+    }
+
+    /* Container for form and story content */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #81c784;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Paragraph styling */
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    /* Form layout styling */
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      order: 0;
+    }
+
+    /* Form group styling (each input/label pair) */
+    .form-group {
+      flex: 1 1 calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Label styling */
+    label {
+      font-size: 1.1rem;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    /* Input field styling */
+    input {
+      padding: 12px;
+      border: 2px solid #81c784;
+      border-radius: 10px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+      font-family: 'Comic Neue', cursive, sans-serif;
+    }
+
+    /* Placeholder styling */
+    input::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Placeholder hover effect */
+    label:hover + input::placeholder {
+      opacity: 1;
+    }
+
+    /* Input focus state */
+    input:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      width: 100%;
+      font-family: 'Comic Neue', cursive, sans-serif;
+    }
+
+    /* Button hover effect */
+    button:hover {
+      background-color: #4caf50;
+      transform: scale(1.05);
+    }
+
+    /* Story container styling (hidden by default) */
+    .story {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border: 2px solid #a5d6a7;
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 1s ease;
+      text-align: left;
+      order: 2;
+    }
+
+    /* Show story class */
+    .story.show {
+      display: block;
+    }
+
+    /* Story title styling */
+    .story-title {
+      font-size: 1.5rem;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      display: none;
+      order: 1;
+    }
+
+    /* Show story title class */
+    .story-title.show {
+      display: block;
+    }
+
+    /* Fade-in animation for story */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Styling for the filled-in words in the story */
+    .story span {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      font-weight: bold;
+      color: #388e3c;
+    }
+
+    /* Navigation buttons container */
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      order: 3;
+    }
+
+    /* Initial position for navigation buttons */
+    .navigation-buttons.initial-position {
+      order: 1;
+    }
+
+    /* Position for navigation buttons when story is shown */
+    .navigation-buttons.story-position {
+      order: 3;
+      margin-top: 20px;
+    }
+
+    /* Navigation button styling */
+    .navigation-buttons button {
+      width: 48%;
+      margin: 0;
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Navigation button hover effect */
+    .navigation-buttons button:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Main content wrapper -->
+  <div class="squarespace-wrapper">
+    <!-- Content container -->
+    <div class="container">
+      <!-- Main heading -->
+      <h1>Championship Basketball Game</h1>
+      <!-- Instructions paragraph -->
+      <p>Fill in the blanks below, then read your exciting basketball story!</p>
+      <!-- MadLibs form -->
+      <form id="madlibs-form">
+        <!-- Form input fields -->
+        <div class="form-group">
+          <label for="noun1">Noun:</label>
+          <input type="text" id="noun1" placeholder="e.g., game" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective1">Adjective:</label>
+          <input type="text" id="adjective1" placeholder="e.g., intense" required>
+        </div>
+        <div class="form-group">
+          <label for="exclamation1">Exclamation Word:</label>
+          <input type="text" id="exclamation1" placeholder="e.g., Wow" required>
+        </div>
+        <div class="form-group">
+          <label for="number1">Number:</label>
+          <input type="text" id="number1" placeholder="e.g., 2" required>
+        </div>
+        <div class="form-group">
+          <label for="disappointment">Disappointment Word:</label>
+          <input type="text" id="disappointment" placeholder="e.g., Oh no" required>
+        </div>
+        <div class="form-group">
+          <label for="noun2">Noun:</label>
+          <input type="text" id="noun2" placeholder="e.g., shot" required>
+        </div>
+        <div class="form-group">
+          <label for="exclamation2">Exclamation Word:</label>
+          <input type="text" id="exclamation2" placeholder="e.g., Oh my" required>
+        </div>
+        <div class="form-group">
+          <label for="timeUnit">Unit of Time (plural):</label>
+          <input type="text" id="timeUnit" placeholder="e.g., seconds" required>
+        </div>
+        <div class="form-group">
+          <label for="number2">Number:</label>
+          <input type="text" id="number2" placeholder="e.g., 1" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective2">Adjective:</label>
+          <input type="text" id="adjective2" placeholder="e.g., excited" required>
+        </div>
+        <!-- Submit button -->
+        <button type="submit">Generate MadWords</button>
+      </form>
+      <!-- Story title (hidden by default) -->
+      <h2 id="story-title" class="story-title">The Championship Game</h2>
+      <!-- Story container (hidden by default) -->
+      <div id="story" class="story">
+        <!-- Story paragraphs with placeholders -->
+        <p>Everybody was watching the championship basketball game. There are two teams: the Earthquake and the Soldiers. I really want the Earthquake to win. It's the 4th quarter of the <span id="noun1-result"></span> and it's a <span id="adjective1-result"></span> game. The Earthquake tipped the ball into the basket. "<span id="exclamation1-result"></span>!" The Earthquake is winning. The Soldiers just made a <span id="number1-result"></span> pointer! "<span id="disappointment-result"></span>!" They are winning now by 2 points. The Earthquake just took another <span id="noun2-result"></span>, but they missed. "<span id="exclamation2-result"></span>!" There are only 10 <span id="timeUnit-result"></span> left in the game. The Soldiers try to pass the ball, but The Earthquake just stole it, drilled down the court and shot a 3 pointer at the buzzer. Will the ball go in the basket? Yes! It went in! The Earthquake won the game by <span id="number2-result"></span> point(s)! Everyone is so <span id="adjective2-result"></span> and can't wait for next year's basketball tournament.</p>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="navigation-buttons initial-position">
+        <button class="home">Home</button>
+        <button class="next">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript functionality -->
+  <script>
+    // Example values for form placeholders
+    const examples = {
+      noun1: ["game", "match", "showdown", "contest"],
+      adjective1: ["intense", "thrilling", "close", "exciting"],
+      exclamation1: ["Wow", "Yes", "Awesome", "Incredible"],
+      number1: ["2", "3", "4", "5"],
+      disappointment: ["Oh no", "Darn", "Bummer", "Ugh"],
+      noun2: ["shot", "attempt", "try", "chance"],
+      exclamation2: ["Oh my", "No way", "Unbelievable", "Come on"],
+      timeUnit: ["seconds", "minutes", "hours", "moments"],
+      number2: ["1", "2", "3", "5"],
+      adjective2: ["excited", "happy", "thrilled", "joyful"]
+    };
+
+    // Set random placeholder examples for each input field
+    for (const key in examples) {
+      const input = document.getElementById(key);
+      if (input) {
+        input.placeholder = `e.g., ${examples[key][Math.floor(Math.random() * examples[key].length)]}`;
+      }
+    }
+
+    // Form submission handler
+    document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get all input values
+      const noun1 = document.getElementById('noun1').value;
+      const adjective1 = document.getElementById('adjective1').value;
+      const exclamation1 = document.getElementById('exclamation1').value;
+      const number1 = document.getElementById('number1').value;
+      const disappointment = document.getElementById('disappointment').value;
+      const noun2 = document.getElementById('noun2').value;
+      const exclamation2 = document.getElementById('exclamation2').value;
+      const timeUnit = document.getElementById('timeUnit').value;
+      const number2 = document.getElementById('number2').value;
+      const adjective2 = document.getElementById('adjective2').value;
+
+      // Insert values into the story
+      document.getElementById('noun1-result').textContent = noun1;
+      document.getElementById('adjective1-result').textContent = adjective1;
+      document.getElementById('exclamation1-result').textContent = exclamation1;
+      document.getElementById('number1-result').textContent = number1;
+      document.getElementById('disappointment-result').textContent = disappointment;
+      document.getElementById('noun2-result').textContent = noun2;
+      document.getElementById('exclamation2-result').textContent = exclamation2;
+      document.getElementById('timeUnit-result').textContent = timeUnit;
+      document.getElementById('number2-result').textContent = number2;
+      document.getElementById('adjective2-result').textContent = adjective2;
+
+      // Show the story title and content
+      document.getElementById('story-title').classList.add('show');
+      document.getElementById('story').classList.add('show');
+
+      // Reposition navigation buttons
+      const navButtons = document.querySelector('.navigation-buttons');
+      navButtons.classList.remove('initial-position');
+      navButtons.classList.add('story-position');
+
+      // Scroll to show the generated story
+      document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Home button click handler
+    document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+      window.location.href = 'https://www.mad-words.com';
+    });
+
+    // Next button click handler
+    document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+      window.location.href = 'https://www.mad-words.com/011';
+    });
+  </script>
+</body>
+</html>
