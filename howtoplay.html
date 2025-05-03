@@ -1,17 +1,31 @@
 <!DOCTYPE html>
+<!-- Main HTML document with English language setting -->
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
+  <!-- Google Analytics tracking code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8NPQCRL1FW');
+  </script>
+
+  <!-- Document metadata and viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Play - MadWords</title>
+
+  <!-- Google Fonts import for Comic Neue -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS styles -->
   <style>
-    /* General Styles */
+    /* Base body styling with gradient background */
     body {
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); 
-      color: #2e7d32; 
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+      color: #2e7d32;
       text-align: center;
       padding: 20px;
       margin: 0;
@@ -21,61 +35,70 @@
       align-items: center;
     }
 
+    /* Main content wrapper styling */
     .squarespace-wrapper {
-      max-width: 800px; 
+      max-width: 800px;
       width: 100%;
       margin: 0 auto;
       padding: 20px;
     }
 
+    /* Primary heading style */
     h1 {
       font-size: 3rem;
-      color: #388e3c; 
-      text-shadow: 2px 2px #a5d6a7; 
+      color: #388e3c;
+      text-shadow: 2px 2px #a5d6a7;
       margin-bottom: 20px;
     }
 
+    /* Content container styling */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
-      border-radius: 20px; 
-      padding: 30px; 
+      border-radius: 20px;
+      padding: 30px;
       width: 100%;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Secondary heading style */
     h2 {
-      color: #388e3c; 
+      color: #388e3c;
       font-size: 2rem;
-      text-shadow: 2px 2px #a5d6a7; 
+      text-shadow: 2px 2px #a5d6a7;
       margin: 20px 0 10px;
     }
 
+    /* Ordered and unordered list styling */
     ol, ul {
       text-align: left;
       padding-left: 20px;
       margin: 10px 0;
     }
 
+    /* List item styling */
     ol li, ul li {
       margin-bottom: 10px;
       font-size: 1.1rem;
-      color: #2e7d32; 
+      color: #2e7d32;
     }
 
+    /* Strong/bold text styling */
     strong {
       color: #388e3c;
     }
 
+    /* Back button styling */
     .back-button {
-      background-color: #66bb6a; 
+      background-color: #66bb6a;
       color: white;
       padding: 12px 24px;
       border: none;
@@ -88,12 +111,13 @@
       display: inline-block;
     }
 
+    /* Back button hover effects */
     .back-button:hover {
-      background-color: #4caf50; 
+      background-color: #4caf50;
       transform: scale(1.05);
     }
 
-    /* Responsive Design */
+    /* Responsive design for smaller screens */
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -117,12 +141,18 @@
     }
   </style>
 </head>
+
+<!-- Main page content -->
 <body>
+  <!-- Page wrapper -->
   <div class="squarespace-wrapper">
+    <!-- Content container -->
     <div class="container">
+      <!-- Main page heading -->
       <h1>How to Play MadWords</h1>
       <p>Learn how to create hilarious stories with MadWords!</p>
 
+      <!-- How to play section -->
       <h2>How to Play</h2>
       <ol>
         <li><strong>Pick a story</strong> template from the main page.</li>
@@ -131,6 +161,7 @@
         <li><strong>Share your story</strong> with friends and enjoy the laughs!</li>
       </ol>
 
+      <!-- Tips section -->
       <h2>Tips for Maximum Fun</h2>
       <ul>
         <li>Use silly or unexpected words for the funniest results.</li>
@@ -138,7 +169,7 @@
         <li>Try different themes to keep things fresh and exciting.</li>
       </ul>
 
-      <!-- Back Button -->
+      <!-- Back button navigation -->
       <a href="https://www.mad-words.com" class="back-button">← Back to MadWords</a>
     </div>
   </div>
