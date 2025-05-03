@@ -1,7 +1,10 @@
+<!-- MadWords: Tricks for How to Sleep -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Favicon for the website -->
   <link rel="icon" href="favicon.png" type="image/png"> 
+  <!-- Google Analytics tracking script -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
   <script> 
     window.dataLayer = window.dataLayer || []; 
@@ -9,12 +12,16 @@
     gtag('js', new Date()); 
     gtag('config', 'G-8NPQCRL1FW'); 
   </script>
+  <!-- Character encoding and responsive viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
   <title>MadWords: Tricks for How to Sleep</title>
+  <!-- Importing Google Font -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
     
+    /* Main body styling */
     body {
       font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -28,6 +35,7 @@
       align-items: center;
     }
 
+    /* Main content wrapper styling */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -36,6 +44,7 @@
       position: relative;
     }
 
+    /* Main heading style */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -43,6 +52,7 @@
       margin-bottom: 20px;
     }
 
+    /* Container for form and story content */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -55,12 +65,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Form layout styling */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -68,6 +80,7 @@
       order: 0;
     }
 
+    /* Form group styling (each input/label pair) */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -75,6 +88,7 @@
       align-items: flex-start;
     }
 
+    /* Label styling */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -83,6 +97,7 @@
       cursor: pointer;
     }
 
+    /* Input field styling */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -94,20 +109,24 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Placeholder styling */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
+    /* Placeholder hover effect */
     label:hover + input::placeholder {
       opacity: 1;
     }
 
+    /* Input focus state */
     input:focus {
       border-color: #4caf50;
       outline: none;
     }
 
+    /* Button styling */
     button {
       background-color: #388e3c;
       color: white;
@@ -122,11 +141,13 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Button hover effect */
     button:hover {
       background-color: #4caf50;
       transform: scale(1.05);
     }
 
+    /* Story container styling (hidden by default) */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -141,10 +162,12 @@
       order: 2;
     }
 
+    /* Show story class */
     .story.show {
       display: block;
     }
 
+    /* Story title styling */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -155,15 +178,18 @@
       order: 1;
     }
 
+    /* Show story title class */
     .story-title.show {
       display: block;
     }
 
+    /* Fade-in animation for story */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Styling for the filled-in words in the story */
     .story span {
       text-decoration: underline;
       text-decoration-skip-ink: none;
@@ -171,6 +197,7 @@
       color: #388e3c;
     }
 
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -178,15 +205,18 @@
       order: 3;
     }
 
+    /* Initial position for navigation buttons */
     .navigation-buttons.initial-position {
       order: 1;
     }
 
+    /* Position for navigation buttons when story is shown */
     .navigation-buttons.story-position {
       order: 3;
       margin-top: 20px;
     }
 
+    /* Navigation button styling */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -200,6 +230,7 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
+    /* Navigation button hover effect */
     .navigation-buttons button:hover {
       background-color: #388e3c;
       transform: scale(1.05);
@@ -207,11 +238,17 @@
   </style>
 </head>
 <body>
+  <!-- Main content wrapper -->
   <div class="squarespace-wrapper">
+    <!-- Content container -->
     <div class="container">
+      <!-- Main heading -->
       <h1>MadWords: Tricks for How to Sleep</h1>
+      <!-- Instructions paragraph -->
       <p>Fill in the blanks below, then read your sleep advice!</p>
+      <!-- MadLibs form -->
       <form id="madlibs-form">
+        <!-- Form input fields -->
         <div class="form-group">
           <label for="beverage">Type of Beverage:</label>
           <input type="text" id="beverage" placeholder="e.g., coffee" required>
@@ -260,10 +297,14 @@
           <label for="verb2">Verb (ending in -ing):</label>
           <input type="text" id="verb2" placeholder="e.g., relaxing" required>
         </div>
+        <!-- Submit button -->
         <button type="submit">Generate MadWords</button>
       </form>
+      <!-- Story title (hidden by default) -->
       <h2 id="story-title" class="story-title">Tricks for How to Sleep</h2>
+      <!-- Story container (hidden by default) -->
       <div id="story" class="story">
+        <!-- Story paragraphs with placeholders -->
         <p>If you're having trouble sleeping, you should try out some of these tricks:</p>
         <p>Never drink a <span id="beverage-result"></span> with caffeine 6 hours before going to bed. Don't drink <span id="adjective1-result"></span> drinks before bed either. If you are drinking water before bed, don't drink more than <span id="number1-result"></span> big gulps.</p>
         <p>Don't read anything too <span id="adjective2-result"></span> or watch any <span id="adjective3-result"></span> shows right before bed.</p>
@@ -271,6 +312,7 @@
         <p>When you get into bed do some <span id="adjective4-result"></span> breathing; cross your two <span id="bodyPart-result"></span> over your chest like a <span id="noun-result"></span>, and then breathe in and breathe out <span id="number2-result"></span> times.</p>
         <p>If you're constantly thinking or worrying about something, just say to yourself that it will all be fine and that you can think about that tomorrow and focus on <span id="verb2-result"></span>.</p>
       </div>
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -278,7 +320,9 @@
     </div>
   </div>
 
+  <!-- JavaScript functionality -->
   <script>
+    // Example values for form placeholders
     const examples = {
       beverage: ["coffee", "soda", "energy drink", "tea"],
       adjective1: ["sugary", "carbonated", "alcoholic", "fizzy"],
@@ -294,6 +338,7 @@
       verb2: ["relaxing", "breathing", "imagining", "visualizing"]
     };
 
+    // Set random placeholder examples for each input field
     for (const key in examples) {
       const input = document.getElementById(key);
       if (input) {
@@ -301,9 +346,11 @@
       }
     }
 
+    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Get all input values
       const beverage = document.getElementById('beverage').value;
       const adjective1 = document.getElementById('adjective1').value;
       const number1 = document.getElementById('number1').value;
@@ -317,6 +364,7 @@
       const number2 = document.getElementById('number2').value;
       const verb2 = document.getElementById('verb2').value;
 
+      // Insert values into the story
       document.getElementById('beverage-result').textContent = beverage;
       document.getElementById('adjective1-result').textContent = adjective1;
       document.getElementById('number1-result').textContent = number1;
@@ -330,20 +378,25 @@
       document.getElementById('number2-result').textContent = number2;
       document.getElementById('verb2-result').textContent = verb2;
 
+      // Show the story title and content
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
+      // Reposition navigation buttons
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
+      // Scroll to show the generated story
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Home button click handler
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
+    // Next button click handler
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/011';
     });
