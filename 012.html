@@ -1,0 +1,379 @@
+<!-- MadWords: Library Visit -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Favicon for the website -->
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  <!-- Google Analytics tracking script -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date()); 
+    gtag('config', 'G-8NPQCRL1FW'); 
+  </script>
+  <!-- Character encoding and responsive viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>Library Visit</title>
+  <!-- Importing Google Font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    
+    /* Main body styling */
+    body {
+      font-family: 'Comic Neue', cursive, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+      color: #2e7d32;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Main content wrapper styling */
+    .squarespace-wrapper {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Main heading style */
+    h1 {
+      font-size: 3rem;
+      color: #388e3c;
+      text-shadow: 2px 2px #a5d6a7;
+      margin-bottom: 20px;
+    }
+
+    /* Container for form and story content */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 2px solid #81c784;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Paragraph styling */
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    /* Form layout styling */
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      order: 0;
+    }
+
+    /* Form group styling (each input/label pair) */
+    .form-group {
+      flex: 1 1 calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Label styling */
+    label {
+      font-size: 1.1rem;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    /* Input field styling */
+    input {
+      padding: 12px;
+      border: 2px solid #81c784;
+      border-radius: 10px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+      font-family: 'Comic Neue', cursive, sans-serif;
+    }
+
+    /* Placeholder styling */
+    input::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Placeholder hover effect */
+    label:hover + input::placeholder {
+      opacity: 1;
+    }
+
+    /* Input focus state */
+    input:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      width: 100%;
+      font-family: 'Comic Neue', cursive, sans-serif;
+    }
+
+    /* Button hover effect */
+    button:hover {
+      background-color: #4caf50;
+      transform: scale(1.05);
+    }
+
+    /* Story container styling (hidden by default) */
+    .story {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border: 2px solid #a5d6a7;
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 1s ease;
+      text-align: left;
+      order: 2;
+    }
+
+    /* Show story class */
+    .story.show {
+      display: block;
+    }
+
+    /* Story title styling */
+    .story-title {
+      font-size: 1.5rem;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      display: none;
+      order: 1;
+    }
+
+    /* Show story title class */
+    .story-title.show {
+      display: block;
+    }
+
+    /* Fade-in animation for story */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Styling for the filled-in words in the story */
+    .story span {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      font-weight: bold;
+      color: #388e3c;
+    }
+
+    /* Navigation buttons container */
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      order: 3;
+    }
+
+    /* Initial position for navigation buttons */
+    .navigation-buttons.initial-position {
+      order: 1;
+    }
+
+    /* Position for navigation buttons when story is shown */
+    .navigation-buttons.story-position {
+      order: 3;
+      margin-top: 20px;
+    }
+
+    /* Navigation button styling */
+    .navigation-buttons button {
+      width: 48%;
+      margin: 0;
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Navigation button hover effect */
+    .navigation-buttons button:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Main content wrapper -->
+  <div class="squarespace-wrapper">
+    <!-- Content container -->
+    <div class="container">
+      <!-- Main heading -->
+      <h1>Library Visit</h1>
+      <!-- Instructions paragraph -->
+      <p>Fill in the blanks below, then read your library adventure story!</p>
+      <!-- MadLibs form -->
+      <form id="madlibs-form">
+        <!-- Form input fields -->
+        <div class="form-group">
+          <label for="noun1">Noun:</label>
+          <input type="text" id="noun1" placeholder="e.g., library" required>
+        </div>
+        <div class="form-group">
+          <label for="exclamation">Exclamation Word:</label>
+          <input type="text" id="exclamation" placeholder="e.g., Yay" required>
+        </div>
+        <div class="form-group">
+          <label for="noun2">Noun:</label>
+          <input type="text" id="noun2" placeholder="e.g., library card" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective1">Adjective:</label>
+          <input type="text" id="adjective1" placeholder="e.g., mystery" required>
+        </div>
+        <div class="form-group">
+          <label for="adjective2">Adjective:</label>
+          <input type="text" id="adjective2" placeholder="e.g., interesting" required>
+        </div>
+        <div class="form-group">
+          <label for="bookName">Book Name:</label>
+          <input type="text" id="bookName" placeholder="e.g., The Secret" required>
+        </div>
+        <div class="form-group">
+          <label for="verb">Verb:</label>
+          <input type="text" id="verb" placeholder="e.g., borrow" required>
+        </div>
+        <div class="form-group">
+          <label for="verbIng">Verb (ending in -ing):</label>
+          <input type="text" id="verbIng" placeholder="e.g., reading" required>
+        </div>
+        <div class="form-group">
+          <label for="number">Number:</label>
+          <input type="text" id="number" placeholder="e.g., 5" required>
+        </div>
+        <!-- Submit button -->
+        <button type="submit">Generate Library Story</button>
+      </form>
+      <!-- Story title (hidden by default) -->
+      <h2 id="story-title" class="story-title">Library Visit</h2>
+      <!-- Story container (hidden by default) -->
+      <div id="story" class="story">
+        <!-- Story paragraphs with placeholders -->
+        <p>A new library just opened next to my house. "Let's go to the new <span id="noun1-result"></span> and get some books there, OK?" said Dad. "<span id="exclamation-result"></span>!" We replied. Dad, Mom and I started walking to the new library when all of a sudden I noticed that I forgot my <span id="noun2-result"></span>. So, I ran back home and got it and then returned to my family. After we entered the library, I went directly to the <span id="adjective1-result"></span> section but didn't find any <span id="adjective2-result"></span> books. So then I went to the fiction section. There I found the book called, "<span id="bookName-result"></span> - Moonlight Mischief". I asked my Mom if I could <span id="verb-result"></span> it, and she said that I could. So, I used my library card to borrow the book. After I got home, I immediately started reading the book and finished <span id="verbIng-result"></span> it in one day. I loved that book and gave it a <span id="number-result"></span> star rating. I like this new library.</p>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="navigation-buttons initial-position">
+        <button class="home">Home</button>
+        <button class="next">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript functionality -->
+  <script>
+    // Example values for form placeholders
+    const examples = {
+      noun1: ["library", "bookstore", "reading place", "book haven"],
+      exclamation: ["Yay", "Awesome", "Great", "Fantastic"],
+      noun2: ["library card", "book bag", "bookmark", "reading glasses"],
+      adjective1: ["mystery", "science", "history", "art"],
+      adjective2: ["interesting", "exciting", "colorful", "fun"],
+      bookName: ["The Secret", "Hidden Treasure", "Night Adventures", "Starry Dreams"],
+      verb: ["borrow", "check out", "take home", "get"],
+      verbIng: ["reading", "enjoying", "devouring", "finishing"],
+      number: ["5", "4", "10", "100"]
+    };
+
+    // Set random placeholder examples for each input field
+    for (const key in examples) {
+      const input = document.getElementById(key);
+      if (input) {
+        input.placeholder = `e.g., ${examples[key][Math.floor(Math.random() * examples[key].length)]}`;
+      }
+    }
+
+    // Form submission handler
+    document.getElementById('madlibs-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get all input values
+      const noun1 = document.getElementById('noun1').value;
+      const exclamation = document.getElementById('exclamation').value;
+      const noun2 = document.getElementById('noun2').value;
+      const adjective1 = document.getElementById('adjective1').value;
+      const adjective2 = document.getElementById('adjective2').value;
+      const bookName = document.getElementById('bookName').value;
+      const verb = document.getElementById('verb').value;
+      const verbIng = document.getElementById('verbIng').value;
+      const number = document.getElementById('number').value;
+
+      // Insert values into the story
+      document.getElementById('noun1-result').textContent = noun1;
+      document.getElementById('exclamation-result').textContent = exclamation;
+      document.getElementById('noun2-result').textContent = noun2;
+      document.getElementById('adjective1-result').textContent = adjective1;
+      document.getElementById('adjective2-result').textContent = adjective2;
+      document.getElementById('bookName-result').textContent = bookName;
+      document.getElementById('verb-result').textContent = verb;
+      document.getElementById('verbIng-result').textContent = verbIng;
+      document.getElementById('number-result').textContent = number;
+
+      // Show the story title and content
+      document.getElementById('story-title').classList.add('show');
+      document.getElementById('story').classList.add('show');
+
+      // Reposition navigation buttons
+      const navButtons = document.querySelector('.navigation-buttons');
+      navButtons.classList.remove('initial-position');
+      navButtons.classList.add('story-position');
+
+      // Scroll to show the generated story
+      document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Home button click handler
+    document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
+      window.location.href = 'https://www.mad-words.com';
+    });
+
+    // Next button click handler
+    document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
+      window.location.href = 'https://www.mad-words.com/013';
+    });
+  </script>
+</body>
+</html>
