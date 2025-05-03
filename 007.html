@@ -1,13 +1,28 @@
+<!-- MadWords: Gnocchi -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <link rel="icon" href="favicon.png" type="image/png"> 
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8NPQCRL1FW'); </script>
+  <!-- Favicon and Google Analytics tracking code -->
+  <link rel="icon" href="favicon.png" type="image/png"> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date()); 
+    gtag('config', 'G-8NPQCRL1FW'); 
+  </script>
+  
+  <!-- Meta tags for character encoding and responsive viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadWords: Gnocchi</title>
+  
+  <!-- Google Fonts import for Comic Neue -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- CSS styles for the page -->
   <style>
+    /* Main body styling with gradient background */
     body {
       font-family: 'Comic Neue', cursive;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -21,6 +36,7 @@
       align-items: center;
     }
 
+    /* Wrapper for centering content */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -29,6 +45,7 @@
       position: relative;
     }
 
+    /* Main heading styling */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -36,6 +53,7 @@
       margin-bottom: 20px;
     }
 
+    /* Container for form and story */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -48,12 +66,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Form layout with flexbox */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -61,6 +81,7 @@
       order: 0;
     }
 
+    /* Form group styling for input fields */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -68,6 +89,7 @@
       align-items: flex-start;
     }
 
+    /* Label styling for form inputs */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -76,6 +98,7 @@
       cursor: pointer;
     }
 
+    /* Input field styling */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -86,6 +109,7 @@
       transition: border-color 0.3s ease;
     }
 
+    /* Placeholder animation effects */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -100,6 +124,7 @@
       outline: none;
     }
 
+    /* Button styling */
     button {
       background-color: #388e3c;
       color: white;
@@ -118,6 +143,7 @@
       transform: scale(1.05);
     }
 
+    /* Story container styling (initially hidden) */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -136,6 +162,7 @@
       display: block;
     }
 
+    /* Story title styling */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -150,11 +177,13 @@
       display: block;
     }
 
+    /* Fade-in animation for story */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Styling for the filled-in words in the story */
     .story span {
       text-decoration: underline;
       text-decoration-skip-ink: none;
@@ -162,6 +191,7 @@
       color: #388e3c;
     }
 
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -178,6 +208,7 @@
       margin-top: 20px;
     }
 
+    /* Navigation buttons styling */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -198,10 +229,14 @@
   </style>
 </head>
 <body>
+  <!-- Main content wrapper -->
   <div class="squarespace-wrapper">
     <div class="container">
+      <!-- Page title and instructions -->
       <h1>MadWords: Gnocchi</h1>
       <p>Fill in the blanks to create your gnocchi story!</p>
+      
+      <!-- MadLibs form with input fields -->
       <form id="madlibs-form">
         <div class="form-group">
           <label for="language">Language:</label>
@@ -257,13 +292,24 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
+      
+      <!-- Story title and content (initially hidden) -->
       <h2 id="story-title" class="story-title">My Favorite Food: Gnocchi</h2>
       <div id="story" class="story">
+        <!-- First paragraph of the story -->
         <p>My favorite food is definitely gnocchi. Why? I thought you'd never ask. The word gnocchi comes from the <span id="language-result"></span> word nocca, which means <span id="noun-result"></span>. It was invented in the year <span id="year-result"></span>. Wow, only 145 <span id="time-unit-result"></span> ago!</p>
+        
+        <!-- Second paragraph of the story -->
         <p>In case you don't know what gnocchi is, it's these <span id="shape-result"></span> shaped dough balls made from flour, potatoes, cheese, and <span id="food-plural-result"></span>. Gnocchi is crunchy on the outside and <span id="adjective1-result"></span> on the inside. That's the best combo! It tastes like a mix between pasta and <span id="food1-result"></span>.</p>
+        
+        <!-- Third paragraph of the story -->
         <p>If you eat gnocchi straight up, it's pretty good, but if it doesn't have enough flavor, you can add tomato sauce, pesto sauce, <span id="food2-result"></span> sauce, or <span id="food3-result"></span> sauce. You can add anything, and it tastes really <span id="adjective2-result"></span>!</p>
+        
+        <!-- Fourth paragraph of the story -->
         <p>If that isn't enough for you, then just look at the cute little gnocchis; they're so <span id="adjective3-result"></span>! But don't feel bad eating the cute little gnocchis. If your mouth isn't watering yet, you should go see a/an <span id="occupation-result"></span>.</p>
       </div>
+      
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button class="home">Home</button>
         <button class="next">Next</button>
@@ -271,7 +317,9 @@
     </div>
   </div>
 
+  <!-- JavaScript functionality -->
   <script>
+    // Example words for placeholders
     const examples = {
       language: ["Italian", "French", "Chinese", "Roman"],
       noun: ["question", "eye", "song", "door", "wind"],
@@ -288,6 +336,7 @@
       occupation: ["chef", "poet", "teacher", "gardener"]
     };
 
+    // Set random example placeholders for each input field
     for (const key in examples) {
       const input = document.getElementById(key);
       if (input) {
@@ -295,9 +344,11 @@
       }
     }
 
+    // Form submission handler
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Get all input values from the form
       const language = document.getElementById('language').value;
       const noun = document.getElementById('noun').value;
       const year = document.getElementById('year').value;
@@ -312,6 +363,7 @@
       const adjective3 = document.getElementById('adjective3').value;
       const occupation = document.getElementById('occupation').value;
 
+      // Update story with user's input values
       document.getElementById('language-result').textContent = language;
       document.getElementById('noun-result').textContent = noun;
       document.getElementById('year-result').textContent = year;
@@ -326,20 +378,25 @@
       document.getElementById('adjective3-result').textContent = adjective3;
       document.getElementById('occupation-result').textContent = occupation;
 
+      // Show the story and title
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
+      // Reposition navigation buttons
       const navButtons = document.querySelector('.navigation-buttons');
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
+      // Scroll to the story title
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Home button click handler
     document.querySelector('.navigation-buttons .home').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
+    // Next button click handler
     document.querySelector('.navigation-buttons .next').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/008';
     });
