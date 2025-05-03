@@ -1,7 +1,11 @@
+<!--MadWords: Once Upon a Sunny Sunday Morning-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Favicon for the website -->
   <link rel="icon" href="favicon.png" type="image/png"> 
+  
+  <!-- Google Analytics tracking code -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NPQCRL1FW"></script> 
   <script> 
     window.dataLayer = window.dataLayer || []; 
@@ -9,12 +13,20 @@
     gtag('js', new Date()); 
     gtag('config', 'G-8NPQCRL1FW'); 
   </script>
+  
+  <!-- Basic meta tags for character set and responsive viewport -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Page title -->
   <title>MadWords: Once Upon a Sunny Sunday Morning</title>
+  
+  <!-- Main CSS styles -->
   <style>
+    /* Import Google Font - Comic Neue */
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
     
+    /* Body styling with gradient background and centered content */
     body {
       font-family: 'Comic Neue', cursive, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
@@ -28,6 +40,7 @@
       align-items: center;
     }
 
+    /* Wrapper for content with max-width */
     .squarespace-wrapper {
       max-width: 800px;
       width: 100%;
@@ -36,6 +49,7 @@
       position: relative;
     }
 
+    /* Main heading style */
     h1 {
       font-size: 3rem;
       color: #388e3c;
@@ -43,6 +57,7 @@
       margin-bottom: 20px;
     }
 
+    /* Main container styling */
     .container {
       background-color: rgba(255, 255, 255, 0.9);
       border: 2px solid #81c784;
@@ -55,12 +70,14 @@
       flex-direction: column;
     }
 
+    /* Paragraph styling */
     p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       color: #2e7d32;
     }
 
+    /* Form layout */
     form {
       display: flex;
       flex-wrap: wrap;
@@ -68,6 +85,7 @@
       order: 0;
     }
 
+    /* Form group styling */
     .form-group {
       flex: 1 1 calc(50% - 15px);
       display: flex;
@@ -75,6 +93,7 @@
       align-items: flex-start;
     }
 
+    /* Label styling */
     label {
       font-size: 1.1rem;
       color: #388e3c;
@@ -83,6 +102,7 @@
       cursor: pointer;
     }
 
+    /* Input field styling */
     input {
       padding: 12px;
       border: 2px solid #81c784;
@@ -94,6 +114,7 @@
       font-family: 'Comic Neue', cursive, sans-serif;
     }
 
+    /* Placeholder animation */
     input::placeholder {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -108,6 +129,7 @@
       outline: none;
     }
 
+    /* Button styling */
     button {
       background-color: #388e3c;
       color: white;
@@ -127,6 +149,7 @@
       transform: scale(1.05);
     }
 
+    /* Story container styling (initially hidden) */
     .story {
       font-size: 1.2rem;
       line-height: 1.6;
@@ -145,6 +168,7 @@
       display: block;
     }
 
+    /* Story title styling */
     .story-title {
       font-size: 1.5rem;
       color: #388e3c;
@@ -159,11 +183,13 @@
       display: block;
     }
 
+    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Special text styling in story */
     .story strong {
       color: #388e3c;
     }
@@ -174,6 +200,7 @@
       font-weight: bold;
     }
 
+    /* Navigation buttons container */
     .navigation-buttons {
       display: flex;
       justify-content: space-between;
@@ -190,6 +217,7 @@
       margin-top: 20px;
     }
 
+    /* Navigation buttons styling */
     .navigation-buttons button {
       width: 48%;
       margin: 0;
@@ -210,10 +238,14 @@
   </style>
 </head>
 <body>
+  <!-- Main content wrapper -->
   <div class="squarespace-wrapper">
     <div class="container">
+      <!-- Page heading and description -->
       <h1>MadWords: Once Upon a Sunny Sunday Morning</h1>
       <p>Fill in the blanks below, then read your hilarious story!</p>
+      
+      <!-- MadLibs form with input fields -->
       <form id="madlibs-form">
         <div class="form-group">
           <label for="adjective">Adjective:</label>
@@ -245,10 +277,16 @@
         </div>
         <button type="submit">Generate MadWords</button>
       </form>
+      
+      <!-- Story title (initially hidden) -->
       <h2 id="story-title" class="story-title">Once Upon a Sunny Sunday Morning</h2>
+      
+      <!-- Story container (initially hidden) -->
       <div id="story" class="story">
         <p>Once upon a <span id="adjective-result"></span> Sunday morning, I woke up at <span id="time-result"></span> and made myself some delicious <span id="food-result"></span>. First, I made some batter, next, I poured it onto the <span id="kitchen-tool-result"></span>, then, I <span id="verb-result"></span> them on one side, and finally, I flipped them over and cooked them on the other side. <span id="exclamation-result"></span>! There are some delicious pancakes ready to <span id="verb2-result"></span>!</p>
       </div>
+      
+      <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
         <button id="home-btn" class="home">Home</button>
         <button id="next-btn" class="next">Next</button>
@@ -256,7 +294,9 @@
     </div>
   </div>
 
+  <!-- JavaScript for the MadLibs functionality -->
   <script>
+    // Example words for placeholder text
     const examples = {
       adjective: ["cold", "sure", "soft", "old", "tired"],
       time: ["1:00 AM", "3:30 PM", "9:00 PM", "10:00 AM"],
@@ -267,7 +307,7 @@
       verb2: ["leave", "swim", "spread", "lie", "dig"]
     };
 
-    // Set random placeholders
+    // Set random example placeholders for each input field
     document.getElementById('adjective').placeholder = `e.g., ${examples.adjective[Math.floor(Math.random() * examples.adjective.length)]}`;
     document.getElementById('time').placeholder = `e.g., ${examples.time[Math.floor(Math.random() * examples.time.length)]}`;
     document.getElementById('food').placeholder = `e.g., ${examples.food[Math.floor(Math.random() * examples.food.length)]}`;
@@ -280,7 +320,7 @@
     document.getElementById('madlibs-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Get input values
+      // Get all input values
       const adjective = document.getElementById('adjective').value;
       const time = document.getElementById('time').value;
       const food = document.getElementById('food').value;
@@ -298,7 +338,7 @@
       document.getElementById('exclamation-result').textContent = exclamation;
       document.getElementById('verb2-result').textContent = verb2;
 
-      // Show the story
+      // Show the story and title
       document.getElementById('story-title').classList.add('show');
       document.getElementById('story').classList.add('show');
 
@@ -307,15 +347,16 @@
       navButtons.classList.remove('initial-position');
       navButtons.classList.add('story-position');
 
-      // Scroll to story
+      // Scroll to the story
       document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Button event listeners
+    // Home button click handler
     document.getElementById('home-btn').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com';
     });
 
+    // Next button click handler
     document.getElementById('next-btn').addEventListener('click', function() {
       window.location.href = 'https://www.mad-words.com/003';
     });
