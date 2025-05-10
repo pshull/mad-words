@@ -294,8 +294,8 @@
           <input type="text" id="number2" placeholder="e.g., 10" required>
         </div>
         <div class="form-group">
-          <label for="verb2">Verb (ending in -ing):</label>
-          <input type="text" id="verb2" placeholder="e.g., relaxing" required>
+          <label for="verbIng">Verb (ending in -ing):</label>
+          <input type="text" id="verbIng" placeholder="e.g., relaxing" required>
         </div>
         <!-- Submit button -->
         <button type="submit">Generate MadWords</button>
@@ -310,7 +310,7 @@
         <p>Don't read anything too <span id="adjective2-result"></span> or watch any <span id="adjective3-result"></span> shows right before bed.</p>
         <p>Don't play any sports or active activities 30 <span id="timeUnit-result"></span> before bed. It's best to read a non-violent book or <span id="verb1-result"></span> a picture.</p>
         <p>When you get into bed do some <span id="adjective4-result"></span> breathing; cross your two <span id="bodyPart-result"></span> over your chest like a <span id="noun-result"></span>, and then breathe in and breathe out <span id="number2-result"></span> times.</p>
-        <p>If you're constantly thinking or worrying about something, just say to yourself that it will all be fine and that you can think about that tomorrow and focus on <span id="verb2-result"></span>.</p>
+        <p>If you're constantly thinking or worrying about something, just say to yourself that it will all be fine and that you can think about that tomorrow and focus on <span id="verbIng-result"></span>.</p>
       </div>
       <!-- Navigation buttons -->
       <div class="navigation-buttons initial-position">
@@ -335,7 +335,7 @@
       bodyPart: ["head", "elbow", "knee", "shoulder", "foot"],
       noun: ["word", "man", "day", "name", "face"],
       number2: ["3", "9.23", "5000", "-99", "0"],
-      verb2: ["cut", "eat", "steal", "call", "send"]
+      verbIng: ["cutting", "eating", "stealing", "calling", "sending"]
     };
 
     // Set random placeholder examples for each input field
@@ -362,7 +362,7 @@
       const bodyPart = document.getElementById('bodyPart').value;
       const noun = document.getElementById('noun').value;
       const number2 = document.getElementById('number2').value;
-      const verb2 = document.getElementById('verb2').value;
+      const verbIng = document.getElementById('verbIng').value;
 
       // Insert values into the story
       document.getElementById('beverage-result').textContent = beverage;
@@ -376,7 +376,7 @@
       document.getElementById('bodyPart-result').textContent = bodyPart;
       document.getElementById('noun-result').textContent = noun;
       document.getElementById('number2-result').textContent = number2;
-      document.getElementById('verb2-result').textContent = verb2;
+      document.getElementById('verbIng-result').textContent = verbIng;
 
       // Show the story title and content
       document.getElementById('story-title').classList.add('show');
