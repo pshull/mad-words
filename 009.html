@@ -29,6 +29,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
 
     /* Wrapper for centering content with max-width */
@@ -36,8 +37,9 @@
       max-width: 800px;
       width: 100%;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
       position: relative;
+      box-sizing: border-box;
     }
 
     /* Main heading styling with text shadow */
@@ -55,6 +57,7 @@
       border-radius: 20px;
       padding: 30px;
       width: 100%;
+      box-sizing: border-box;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
     }
@@ -249,6 +252,25 @@
     /* Navigation buttons ordering in flex container */
     .navigation-buttons {
       order: 3;
+    }
+
+    /* Media query for small devices */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      
+      .form-group {
+        flex: 1 1 100% !important;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 20px;
+      }
     }
   </style>
 </head>
