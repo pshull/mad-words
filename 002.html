@@ -21,6 +21,9 @@
   <!-- Page title -->
   <title>MadWords: Once Upon a Sunny Sunday Morning</title>
   
+  <!-- Google Fonts import for Comic Neue -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
   <!-- Main CSS styles -->
   <style>
     /* Box sizing rules */
@@ -31,12 +34,9 @@
         box-sizing: inherit;
     }
 
-    /* Import Google Font - Comic Neue */
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
     /* Body styling with gradient background and centered content */
     body {
-      font-family: 'Comic Neue', cursive, sans-serif;
+      font-family: 'Comic Neue', cursive;
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
       color: #2e7d32;
       text-align: center;
@@ -119,7 +119,7 @@
       width: 100%;
       box-sizing: border-box;
       transition: border-color 0.3s ease;
-      font-family: 'Comic Neue', cursive, sans-serif;
+      font-family: 'Comic Neue', cursive;
     }
 
     /* Placeholder animation */
@@ -149,236 +149,8 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
       margin-top: 20px;
       width: 100%;
-      font-family: 'Comic Neue', cursive, sans-serif;
+      font-family: 'Comic Neue', cursive;
     }
 
     button:hover {
-      background-color: #4caf50;
-      transform: scale(1.05);
-    }
-
-    /* Story container styling (initially hidden) */
-    .story {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f1f8e9;
-      border: 2px solid #a5d6a7;
-      border-radius: 10px;
-      display: none;
-      animation: fadeIn 1s ease;
-      text-align: left;
-      order: 2;
-    }
-
-    .story.show {
-      display: block;
-    }
-
-    /* Story title styling */
-    .story-title {
-      font-size: 1.5rem;
-      color: #388e3c;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-      display: none;
-      order: 1;
-    }
-
-    .story-title.show {
-      display: block;
-    }
-
-    /* Fade-in animation */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Special text styling in story */
-    .story strong {
-      color: #388e3c;
-    }
-
-    .story span {
-      text-decoration: underline;
-      text-decoration-skip-ink: none;
-      font-weight: bold;
-    }
-
-    /* Navigation buttons container */
-    .navigation-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-      order: 3;
-    }
-
-    .navigation-buttons.initial-position {
-      order: 1;
-    }
-
-    .navigation-buttons.story-position {
-      order: 3;
-      margin-top: 20px;
-    }
-
-    /* Navigation buttons styling */
-    .navigation-buttons button {
-      width: 48%;
-      margin: 0;
-      background-color: #4caf50;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .navigation-buttons button:hover {
-      background-color: #388e3c;
-      transform: scale(1.05);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-        h1 {
-            font-size: 2rem;
-        }
-        
-        .form-group {
-            flex: 1 1 100%;
-        }
-    }
-  </style>
-</head>
-<body>
-  <!-- Main content wrapper -->
-  <div class="squarespace-wrapper">
-    <div class="container">
-      <!-- Page heading and description -->
-      <h1>MadWords: Once Upon a Sunny Sunday Morning</h1>
-      <p>Fill in the blanks below, then read your hilarious story!</p>
-      
-      <!-- MadLibs form with input fields -->
-      <form id="madlibs-form">
-        <div class="form-group">
-          <label for="adjective">Adjective:</label>
-          <input type="text" id="adjective" placeholder="e.g., sunny" required>
-        </div>
-        <div class="form-group">
-          <label for="time">Time:</label>
-          <input type="text" id="time" placeholder="e.g., 8:00 AM" required>
-        </div>
-        <div class="form-group">
-          <label for="food">Food:</label>
-          <input type="text" id="food" placeholder="e.g., pancakes" required>
-        </div>
-        <div class="form-group">
-          <label for="kitchen-tool">Kitchen Tool:</label>
-          <input type="text" id="kitchen-tool" placeholder="e.g., frying pan" required>
-        </div>
-        <div class="form-group">
-          <label for="verb">Verb (past tense):</label>
-          <input type="text" id="verb" placeholder="e.g., cooked" required>
-        </div>
-        <div class="form-group">
-          <label for="exclamation">Exclamation:</label>
-          <input type="text" id="exclamation" placeholder="e.g., Wow!" required>
-        </div>
-        <div class="form-group">
-          <label for="verb2">Verb:</label>
-          <input type="text" id="verb2" placeholder="e.g., eat" required>
-        </div>
-        <button type="submit">Generate MadWords</button>
-      </form>
-      
-      <!-- Story title (initially hidden) -->
-      <h2 id="story-title" class="story-title">Once Upon a Sunny Sunday Morning</h2>
-      
-      <!-- Story container (initially hidden) -->
-      <div id="story" class="story">
-        <p>Once upon a <span id="adjective-result"></span> Sunday morning, I woke up at <span id="time-result"></span> and made myself some delicious <span id="food-result"></span>. First, I made some batter, next, I poured it onto the <span id="kitchen-tool-result"></span>, then, I <span id="verb-result"></span> them on one side, and finally, I flipped them over and cooked them on the other side. <span id="exclamation-result"></span>! There are some delicious pancakes ready to <span id="verb2-result"></span>!</p>
-      </div>
-      
-      <!-- Navigation buttons -->
-      <div class="navigation-buttons initial-position">
-        <button id="home-btn" class="home">Home</button>
-        <button id="next-btn" class="next">Next</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- JavaScript for the MadLibs functionality -->
-  <script>
-    // Example words for placeholder text
-    const examples = {
-      adjective: ["cold", "sure", "soft", "old", "tired"],
-      time: ["1:00 AM", "3:30 PM", "9:00 PM", "10:00 AM"],
-      food: ["pizza", "salad", "noodles", "celery", "bread"],
-      kitchenTool: ["mixer", "oven", "toaster", "knife"],
-      verb: ["slapped", "jumped", "dove", "ran"],
-      exclamation: ["Wow", "What", "That's crazy", "Amazing"],
-      verb2: ["leave", "swim", "spread", "lie", "dig"]
-    };
-
-    // Set random example placeholders for each input field
-    document.getElementById('adjective').placeholder = `e.g., ${examples.adjective[Math.floor(Math.random() * examples.adjective.length)]}`;
-    document.getElementById('time').placeholder = `e.g., ${examples.time[Math.floor(Math.random() * examples.time.length)]}`;
-    document.getElementById('food').placeholder = `e.g., ${examples.food[Math.floor(Math.random() * examples.food.length)]}`;
-    document.getElementById('kitchen-tool').placeholder = `e.g., ${examples.kitchenTool[Math.floor(Math.random() * examples.kitchenTool.length)]}`;
-    document.getElementById('verb').placeholder = `e.g., ${examples.verb[Math.floor(Math.random() * examples.verb.length)]}`;
-    document.getElementById('exclamation').placeholder = `e.g., ${examples.exclamation[Math.floor(Math.random() * examples.exclamation.length)]}`;
-    document.getElementById('verb2').placeholder = `e.g., ${examples.verb2[Math.floor(Math.random() * examples.verb2.length)]}`;
-
-    // Form submission handler
-    document.getElementById('madlibs-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      // Get all input values
-      const adjective = document.getElementById('adjective').value;
-      const time = document.getElementById('time').value;
-      const food = document.getElementById('food').value;
-      const kitchenTool = document.getElementById('kitchen-tool').value;
-      const verb = document.getElementById('verb').value;
-      const exclamation = document.getElementById('exclamation').value;
-      const verb2 = document.getElementById('verb2').value;
-
-      // Insert values into the story
-      document.getElementById('adjective-result').textContent = adjective;
-      document.getElementById('time-result').textContent = time;
-      document.getElementById('food-result').textContent = food;
-      document.getElementById('kitchen-tool-result').textContent = kitchenTool;
-      document.getElementById('verb-result').textContent = verb;
-      document.getElementById('exclamation-result').textContent = exclamation;
-      document.getElementById('verb2-result').textContent = verb2;
-
-      // Show the story and title
-      document.getElementById('story-title').classList.add('show');
-      document.getElementById('story').classList.add('show');
-
-      // Move navigation buttons below story
-      const navButtons = document.querySelector('.navigation-buttons');
-      navButtons.classList.remove('initial-position');
-      navButtons.classList.add('story-position');
-
-      // Scroll to the story
-      document.getElementById('story-title').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Home button click handler
-    document.getElementById('home-btn').addEventListener('click', function() {
-      window.location.href = 'https://www.mad-words.com';
-    });
-
-    // Next button click handler
-    document.getElementById('next-btn').addEventListener('click', function() {
-      window.location.href = 'https://www.mad-words.com/003';
-    });
-  </script>
-</body>
-</html>
+      background
