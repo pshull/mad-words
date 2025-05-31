@@ -33,6 +33,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
 
     /* Main content wrapper styling */
@@ -40,8 +41,9 @@
       max-width: 800px;
       width: 100%;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
       position: relative;
+      box-sizing: border-box;
     }
 
     /* Main heading style */
@@ -59,6 +61,7 @@
       border-radius: 20px;
       padding: 30px;
       width: 100%;
+      box-sizing: border-box;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
       display: flex;
@@ -234,6 +237,29 @@
     .navigation-buttons button:hover {
       background-color: #388e3c;
       transform: scale(1.05);
+    }
+
+    /* Responsive styles for small screens */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+      
+      .form-group {
+        flex: 1 1 100% !important;
+      }
+      
+      .navigation-buttons button {
+        width: 48%;
+      }
     }
   </style>
 </head>
