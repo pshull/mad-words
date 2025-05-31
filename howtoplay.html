@@ -34,6 +34,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
 
     /* Main content wrapper styling */
@@ -41,7 +42,8 @@
       max-width: 800px;
       width: 100%;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
 
     /* Primary heading style */
@@ -59,6 +61,7 @@
       border-radius: 20px;
       padding: 30px;
       width: 100%;
+      box-sizing: border-box;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
     }
@@ -120,6 +123,10 @@
 
     /* Responsive design for smaller screens */
     @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      
       h1 {
         font-size: 2rem;
       }
@@ -139,6 +146,11 @@
       ol li, ul li {
         font-size: 1rem;
       }
+      
+      .back-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -151,21 +163,21 @@
     <div class="container">
       <!-- Main page heading -->
       <h1>How to Play MadWords</h1>
-      <p>Learn how to create hilarious stories with MadWords!</p>
+      <p>Suitable for a group of 2 to 5 people</p>
 
       <!-- How to play section -->
       <h2>How to Play</h2>
       <ol>
         <li><strong>Pick a story</strong> template from the main page.</li>
-        <li><strong>Fill in the Blanks</strong> with the requested words.</li>
+        <li><strong>Fill in the blanks</strong> with the requested words.</li>
         <li><strong>Click "Generate Story"</strong> to see your completed MadWord.</li>
-        <li><strong>Share your story</strong> with friends and enjoy the laughs!</li>
+        <li><strong>Read the story</strong> in your group and enjoy the laughs!</li>
       </ol>
 
       <!-- Tips section -->
       <h2>Tips for Maximum Fun</h2>
       <ul>
-        <li>Play with friends(!!!) and take turns filling in the blanks.</li>
+        <li>Play in a group (!!!) and take turns filling in the blanks.</li>
         <li>Use silly or unexpected words for the funniest results.</li>
         <li>Try different themes to keep things fresh and exciting.</li>
       </ul>
