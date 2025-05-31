@@ -19,6 +19,14 @@
   
   <!-- CSS styles for the page -->
   <style>
+    /* Box sizing rules */
+    html {
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
     
     /* Main body styling */
@@ -27,12 +35,12 @@
       background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
       color: #2e7d32;
       text-align: center;
-      padding: 20px;
       margin: 0;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px 0; /* Vertical padding only */
     }
 
     /* Wrapper for content */
@@ -226,6 +234,17 @@
     .navigation-buttons button:hover {
       background-color: #388e3c;
       transform: scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .form-group {
+            flex: 1 1 100%;
+        }
     }
   </style>
 </head>
