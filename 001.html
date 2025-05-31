@@ -26,18 +26,26 @@
   
   <!-- Main CSS styles -->
   <style>
+      /* Box sizing rules */
+      html {
+          box-sizing: border-box;
+      }
+      *, *:before, *:after {
+          box-sizing: inherit;
+      }
+
       /* Body styling with gradient background and centered content */
       body {
           font-family: 'Comic Neue', cursive;
           background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
           color: #2e7d32;
           text-align: center;
-          padding: 20px;
           margin: 0;
           min-height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 20px 0; /* Vertical padding only */
       }
 
       /* Wrapper for content with max-width */
@@ -257,6 +265,21 @@
       /* Navigation buttons order in container */
       .navigation-buttons {
           order: 3;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+          h1 {
+              font-size: 2rem;
+          }
+          
+          .form-group {
+              flex: 1 1 100%;
+          }
+          
+          .form-group.half-width {
+              flex: 1 1 calc(50% - 15px);
+          }
       }
   </style>
 </head>
